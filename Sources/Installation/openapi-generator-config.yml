@@ -1,0 +1,14 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - installation/created
+    - installation/deleted
+    - installation/new-permissions-accepted
+    - installation-repositories/added
+    - installation-repositories/removed
+    - installation/suspend
+    - installation-target/renamed
+    - installation/unsuspend

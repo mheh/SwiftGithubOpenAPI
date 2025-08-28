@@ -1,0 +1,12 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - sponsorship/cancelled
+    - sponsorship/created
+    - sponsorship/edited
+    - sponsorship/pending-cancellation
+    - sponsorship/pending-tier-change
+    - sponsorship/tier-changed

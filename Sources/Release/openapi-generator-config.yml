@@ -1,0 +1,13 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - release/created
+    - release/deleted
+    - release/edited
+    - release/prereleased
+    - release/published
+    - release/released
+    - release/unpublished

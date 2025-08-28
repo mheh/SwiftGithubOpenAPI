@@ -1,0 +1,8 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - org-block/blocked
+    - org-block/unblocked

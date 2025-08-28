@@ -1,0 +1,33 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - pull-request/assigned
+    - pull-request/auto-merge-disabled
+    - pull-request/auto-merge-enabled
+    - pull-request/closed
+    - pull-request/converted-to-draft
+    - pull-request/demilestoned
+    - pull-request/edited
+    - pull-request/labeled
+    - pull-request/locked
+    - pull-request/milestoned
+    - pull-request/opened
+    - pull-request/ready-for-review
+    - pull-request/reopened
+    - pull-request-review-comment/created
+    - pull-request-review-comment/deleted
+    - pull-request-review-comment/edited
+    - pull-request-review/dismissed
+    - pull-request-review/edited
+    - pull-request/review-request-removed
+    - pull-request/review-requested
+    - pull-request-review/submitted
+    - pull-request-review-thread/resolved
+    - pull-request-review-thread/unresolved
+    - pull-request/synchronize
+    - pull-request/unassigned
+    - pull-request/unlabeled
+    - pull-request/unlocked

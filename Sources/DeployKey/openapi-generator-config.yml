@@ -1,0 +1,8 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - deploy-key/created
+    - deploy-key/deleted

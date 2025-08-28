@@ -1,0 +1,9 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - member/added
+    - member/edited
+    - member/removed

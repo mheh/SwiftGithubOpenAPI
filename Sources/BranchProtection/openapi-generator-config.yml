@@ -1,0 +1,9 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - branch-protection-rule/created
+    - branch-protection-rule/deleted
+    - branch-protection-rule/edited

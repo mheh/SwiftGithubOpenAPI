@@ -1,0 +1,12 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - team-add
+    - team/added-to-repository
+    - team/created
+    - team/deleted
+    - team/edited
+    - team/removed-from-repository

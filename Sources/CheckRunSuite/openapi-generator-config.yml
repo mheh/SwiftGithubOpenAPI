@@ -1,0 +1,9 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - check-run/completed
+    - check-run/created
+    - check-suite/completed

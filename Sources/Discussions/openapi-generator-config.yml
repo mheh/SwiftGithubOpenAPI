@@ -1,0 +1,22 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - discussion/answered
+    - discussion/category-changed
+    - discussion-comment/created
+    - discussion-comment/deleted
+    - discussion-comment/edited
+    - discussion/created
+    - discussion/deleted
+    - discussion/edited
+    - discussion/labeled
+    - discussion/locked
+    - discussion/pinned
+    - discussion/transferred
+    - discussion/unanswered
+    - discussion/unlabeled
+    - discussion/unlocked
+    - discussion/unpinned

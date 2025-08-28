@@ -1,0 +1,13 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - workflow-dispatch
+    - workflow-job/completed
+    - workflow-job/in-progress
+    - workflow-job/queued
+    - workflow-run/completed
+    - workflow-run/in-progress
+    - workflow-run/requested

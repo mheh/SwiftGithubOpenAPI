@@ -1,0 +1,26 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - issue-comment/created
+    - issue-comment/deleted
+    - issue-comment/edited
+    - issues/assigned
+    - issues/closed
+    - issues/deleted
+    - issues/demilestoned
+    - issues/edited
+    - issues/labeled
+    - issues/locked
+    - issues/milestoned
+    - issues/opened
+    - issues/pinned
+    - issues/reopened
+    - issues/transferred
+    - issues/unassigned
+    - issues/unlabeled
+    - issues/unlocked
+    - issues/unpinned
+

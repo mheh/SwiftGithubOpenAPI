@@ -1,0 +1,11 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - dependabot-alert/created
+    - dependabot-alert/dismissed
+    - dependabot-alert/fixed
+    - dependabot-alert/reintroduced
+    - dependabot-alert/reopened

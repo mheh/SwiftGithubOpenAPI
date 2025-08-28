@@ -1,0 +1,22 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - project/closed
+    - project-column/created
+    - project-column/deleted
+    - project-column/edited
+    - project-column/moved
+    - project/created
+    - project/deleted
+    - project/edited
+    - project/reopened
+    - projects-v2-item/archived
+    - projects-v2-item/converted
+    - projects-v2-item/created
+    - projects-v2-item/deleted
+    - projects-v2-item/edited
+    - projects-v2-item/reordered
+    - projects-v2-item/restored

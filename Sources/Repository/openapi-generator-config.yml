@@ -1,0 +1,21 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - repository/archived
+    - repository/created
+    - repository/deleted
+    - repository-dispatch/sample.collected
+    - repository/edited
+    - repository-import
+    - repository/privatized
+    - repository/publicized
+    - repository/renamed
+    - repository/transferred
+    - repository/unarchived
+    - repository-vulnerability-alert/create
+    - repository-vulnerability-alert/dismiss
+    - repository-vulnerability-alert/reopen
+    - repository-vulnerability-alert/resolve

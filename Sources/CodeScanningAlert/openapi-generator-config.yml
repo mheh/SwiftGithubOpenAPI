@@ -1,0 +1,12 @@
+generate:
+  - types
+accessModifier: public
+namingStrategy: idiomatic
+filter:
+  operations:
+    - code-scanning-alert/appeared-in-branch
+    - code-scanning-alert/closed-by-user
+    - code-scanning-alert/created
+    - code-scanning-alert/fixed
+    - code-scanning-alert/reopened
+    - code-scanning-alert/reopened-by-user
