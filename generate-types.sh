@@ -26,13 +26,11 @@ for SOURCE in "$SOURCES_PATH"/*; do
   if swift run swift-openapi-generator generate \
     --config "$SOURCE_CONFIG_PATH" \
     --output-directory="$OUTPUT_DIR" \
-    "$YAML_LOCATION" \
-    1> /dev/null 2> /dev/null ; ## Pipe regular output to null, still provide error
+    "$YAML_LOCATION";
   then
     echo "Successful output for $SOURCE at $OUTPUT_DIR"
   else
     echo "Command failed"
-    echo "Check https://github.com/apple/swift-openapi-generator/issues/818"
     exit
     ## if this says no yaml found, you need the yaml in each root folder: /Sources/<folder>/openapi.yaml
   fi
