@@ -7,10 +7,17 @@
 
 import Foundation
 import Testing
+import Push
 
 @Suite struct DecodingTests {
     @Test("Push Event Decode - Happy") func testPushEventDecodeHappy() throws {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
         
+        let data = pushEventString.data(using: .utf8)!
+        
+        let decoded = try decoder.decode(Push.Components.Schemas.WebhookPush.self, from: data)
+        print(decoded)
     }
 }
 
@@ -49,7 +56,7 @@ fileprivate let pushEventString = """
       "site_admin": false
     },
     "html_url": "https://github.com/mheh/SwiftGithubOpenAPI",
-    "description": "Deployable MacWorks Server for AASPs",
+    "description": "",
     "fork": false,
     "url": "https://api.github.com/repos/mheh/SwiftGithubOpenAPI",
     "forks_url": "https://api.github.com/repos/mheh/SwiftGithubOpenAPI/forks",
@@ -148,7 +155,7 @@ fileprivate let pushEventString = """
     "members_url": "https://api.github.com/orgs/mheh/members{/member}",
     "public_members_url": "https://api.github.com/orgs/mheh/public_members{/member}",
     "avatar_url": "https://avatars.githubusercontent.com/u/127902454?v=4",
-    "description": "Locally owned AASP and development"
+    "description": ""
   },
   "sender": {
     "login": "mheh",
@@ -177,51 +184,26 @@ fileprivate let pushEventString = """
   "base_ref": null,
   "compare": "https://github.com/mheh/SwiftGithubOpenAPI/compare/08aba85df741...e144fa45d8f6",
   "commits": [
-    {
-      "id": "e144fa45d8f605d74496ddf45fd8b0d1b1e1e293",
-      "tree_id": "c2b041f2419b684ea0f3dce6f318df047120e4b0",
-      "distinct": true,
-      "message": "remove old dockerfile but really just test if webhook push decoding works",
-      "timestamp": "2025-08-27T20:22:18-05:00",
-      "url": "https://github.com/mheh/SwiftGithubOpenAPI/commit/e144fa45d8f605d74496ddf45fd8b0d1b1e1e293",
-      "author": {
-        "name": "Milo Hehmsoth",
-        "email": "mhehmsoth@gmail.com",
-        "username": "mheh"
-      },
-      "committer": {
-        "name": "Milo Hehmsoth",
-        "email": "mhehmsoth@gmail.com",
-        "username": "mheh"
-      },
-      "added": [],
-      "removed": [
-        "Dockerfile-old"
-      ],
-      "modified": []
-    }
   ],
   "head_commit": {
     "id": "e144fa45d8f605d74496ddf45fd8b0d1b1e1e293",
     "tree_id": "c2b041f2419b684ea0f3dce6f318df047120e4b0",
     "distinct": true,
-    "message": "remove old dockerfile but really just test if webhook push decoding works",
+    "message": "",
     "timestamp": "2025-08-27T20:22:18-05:00",
-    "url": "https://github.com/mheh/SwiftGithubOpenAPI/commit/e144fa45d8f605d74496ddf45fd8b0d1b1e1e293",
+    "url": "",
     "author": {
       "name": "Milo Hehmsoth",
-      "email": "mhehmsoth@gmail.com",
+      "email": "<redacted>",
       "username": "mheh"
     },
     "committer": {
       "name": "Milo Hehmsoth",
-      "email": "mhehmsoth@gmail.com",
+      "email": "<redacted>",
       "username": "mheh"
     },
     "added": [],
-    "removed": [
-      "Dockerfile-old"
-    ],
+    "removed": [],
     "modified": []
   }
 }

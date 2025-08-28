@@ -10,3 +10,19 @@ The following was done to make it build:
 1. All yaml `paths:` operations were removed.
 2. `webhooks:` was renamed to `paths:`
 3. All `externalDocs:` were removed
+
+## Basic usage
+When using `JSONDecoder` to decode the types, you'll want to use `.iso8601` date decoding.
+```swift
+import Push
+
+func foo(data: Data) throws {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
+        let data = pushEventString.data(using: .utf8)!
+        
+        let decoded = try decoder.decode(Push.Components.Schemas.WebhookPush.self, from: data)
+        print(decoded)
+}
+```
