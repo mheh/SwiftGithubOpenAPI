@@ -57,7 +57,7 @@ let targets: [Target] = sources.map { source in
     return .target(
         name: "\(source)",
         dependencies: [ .product(name: "OpenAPIRuntime", package: "swift-openapi-runtime") ],
-//        plugins: [ .plugin(name: "OpenAPIGenerator", package: "swift-openapi-generator") ]
+        plugins: [ .plugin(name: "OpenAPIGenerator", package: "swift-openapi-generator") ]
     )
 }
 
@@ -73,8 +73,8 @@ let package = Package(
     products: products,
     
     dependencies: [
-        .package(url: "https://github.com/apple/swift-openapi-runtime", exact: "1.8.2")
-//        .package(url: "https://github.com/apple/swift-openapi-generator", exact: "1.10.2"),
+        .package(url: "https://github.com/apple/swift-openapi-runtime", exact: "1.8.2"),
+        .package(url: "https://github.com/apple/swift-openapi-generator", exact: "1.10.2"),
     ],
     
     targets: targets + testTargets
