@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -747,9 +745,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -773,8 +771,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -1068,11 +1066,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -2138,9 +2136,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2667,11 +2665,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/nullable-repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/nullable-repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/nullable-repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/nullable-repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/nullable-repository/allow_rebase_merge`.
@@ -3737,9 +3735,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.NullableRepository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -4017,11 +4015,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/projects-v2-item/creator`.
             public var creator: Components.Schemas.SimpleUser?
             /// - Remark: Generated from `#/components/schemas/projects-v2-item/created_at`.
-            public var createdAt: Foundation.Date
+            public var createdAt: Swift.String
             /// - Remark: Generated from `#/components/schemas/projects-v2-item/updated_at`.
-            public var updatedAt: Foundation.Date
+            public var updatedAt: Swift.String
             /// - Remark: Generated from `#/components/schemas/projects-v2-item/archived_at`.
-            public var archivedAt: Foundation.Date?
+            public var archivedAt: Swift.String?
             /// Creates a new `ProjectsV2Item`.
             ///
             /// - Parameters:
@@ -4041,9 +4039,9 @@ public enum Components {
                 contentNodeId: Swift.String,
                 contentType: Components.Schemas.ProjectsV2ItemContentType,
                 creator: Components.Schemas.SimpleUser? = nil,
-                createdAt: Foundation.Date,
-                updatedAt: Foundation.Date,
-                archivedAt: Foundation.Date? = nil
+                createdAt: Swift.String,
+                updatedAt: Swift.String,
+                archivedAt: Swift.String? = nil
             ) {
                 self.id = id
                 self.nodeId = nodeId
@@ -4090,7 +4088,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-closed/project/columns_url`.
                 public var columnsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-closed/project/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-closed/project/creator`.
                 public struct CreatorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-project-closed/project/creator/avatar_url`.
@@ -4262,7 +4260,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-closed/project/state`.
                 public var state: Components.Schemas.WebhookProjectClosed.ProjectPayload.StatePayload
                 /// - Remark: Generated from `#/components/schemas/webhook-project-closed/project/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-closed/project/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectPayload`.
@@ -4284,7 +4282,7 @@ public enum Components {
                 public init(
                     body: Swift.String? = nil,
                     columnsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     creator: Components.Schemas.WebhookProjectClosed.ProjectPayload.CreatorPayload? = nil,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
@@ -4293,7 +4291,7 @@ public enum Components {
                     number: Swift.Int,
                     ownerUrl: Swift.String,
                     state: Components.Schemas.WebhookProjectClosed.ProjectPayload.StatePayload,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.body = body
@@ -4390,7 +4388,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-created/project_column/cards_url`.
                 public var cardsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-created/project_column/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// The unique identifier of the project column
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-created/project_column/id`.
@@ -4404,7 +4402,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-created/project_column/project_url`.
                 public var projectUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-created/project_column/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-created/project_column/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectColumnPayload`.
@@ -4422,12 +4420,12 @@ public enum Components {
                 public init(
                     afterId: Swift.Int? = nil,
                     cardsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     id: Swift.Int,
                     name: Swift.String,
                     nodeId: Swift.String,
                     projectUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.afterId = afterId
@@ -4516,7 +4514,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-deleted/project_column/cards_url`.
                 public var cardsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-deleted/project_column/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// The unique identifier of the project column
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-deleted/project_column/id`.
@@ -4530,7 +4528,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-deleted/project_column/project_url`.
                 public var projectUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-deleted/project_column/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-deleted/project_column/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectColumnPayload`.
@@ -4548,12 +4546,12 @@ public enum Components {
                 public init(
                     afterId: Swift.Int? = nil,
                     cardsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     id: Swift.Int,
                     name: Swift.String,
                     nodeId: Swift.String,
                     projectUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.afterId = afterId
@@ -4674,7 +4672,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-edited/project_column/cards_url`.
                 public var cardsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-edited/project_column/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// The unique identifier of the project column
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-edited/project_column/id`.
@@ -4688,7 +4686,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-edited/project_column/project_url`.
                 public var projectUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-edited/project_column/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-edited/project_column/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectColumnPayload`.
@@ -4706,12 +4704,12 @@ public enum Components {
                 public init(
                     afterId: Swift.Int? = nil,
                     cardsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     id: Swift.Int,
                     name: Swift.String,
                     nodeId: Swift.String,
                     projectUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.afterId = afterId
@@ -4804,7 +4802,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-moved/project_column/cards_url`.
                 public var cardsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-moved/project_column/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// The unique identifier of the project column
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-moved/project_column/id`.
@@ -4818,7 +4816,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-moved/project_column/project_url`.
                 public var projectUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-moved/project_column/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-column-moved/project_column/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectColumnPayload`.
@@ -4836,12 +4834,12 @@ public enum Components {
                 public init(
                     afterId: Swift.Int? = nil,
                     cardsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     id: Swift.Int,
                     name: Swift.String,
                     nodeId: Swift.String,
                     projectUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.afterId = afterId
@@ -4932,7 +4930,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-created/project/columns_url`.
                 public var columnsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-created/project/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-created/project/creator`.
                 public struct CreatorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-project-created/project/creator/avatar_url`.
@@ -5104,7 +5102,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-created/project/state`.
                 public var state: Components.Schemas.WebhookProjectCreated.ProjectPayload.StatePayload
                 /// - Remark: Generated from `#/components/schemas/webhook-project-created/project/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-created/project/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectPayload`.
@@ -5126,7 +5124,7 @@ public enum Components {
                 public init(
                     body: Swift.String? = nil,
                     columnsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     creator: Components.Schemas.WebhookProjectCreated.ProjectPayload.CreatorPayload? = nil,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
@@ -5135,7 +5133,7 @@ public enum Components {
                     number: Swift.Int,
                     ownerUrl: Swift.String,
                     state: Components.Schemas.WebhookProjectCreated.ProjectPayload.StatePayload,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.body = body
@@ -5234,7 +5232,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-deleted/project/columns_url`.
                 public var columnsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-deleted/project/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-deleted/project/creator`.
                 public struct CreatorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-project-deleted/project/creator/avatar_url`.
@@ -5406,7 +5404,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-deleted/project/state`.
                 public var state: Components.Schemas.WebhookProjectDeleted.ProjectPayload.StatePayload
                 /// - Remark: Generated from `#/components/schemas/webhook-project-deleted/project/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-deleted/project/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectPayload`.
@@ -5428,7 +5426,7 @@ public enum Components {
                 public init(
                     body: Swift.String? = nil,
                     columnsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     creator: Components.Schemas.WebhookProjectDeleted.ProjectPayload.CreatorPayload? = nil,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
@@ -5437,7 +5435,7 @@ public enum Components {
                     number: Swift.Int,
                     ownerUrl: Swift.String,
                     state: Components.Schemas.WebhookProjectDeleted.ProjectPayload.StatePayload,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.body = body
@@ -5599,7 +5597,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-edited/project/columns_url`.
                 public var columnsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-edited/project/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-edited/project/creator`.
                 public struct CreatorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-project-edited/project/creator/avatar_url`.
@@ -5771,7 +5769,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-edited/project/state`.
                 public var state: Components.Schemas.WebhookProjectEdited.ProjectPayload.StatePayload
                 /// - Remark: Generated from `#/components/schemas/webhook-project-edited/project/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-edited/project/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectPayload`.
@@ -5793,7 +5791,7 @@ public enum Components {
                 public init(
                     body: Swift.String? = nil,
                     columnsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     creator: Components.Schemas.WebhookProjectEdited.ProjectPayload.CreatorPayload? = nil,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
@@ -5802,7 +5800,7 @@ public enum Components {
                     number: Swift.Int,
                     ownerUrl: Swift.String,
                     state: Components.Schemas.WebhookProjectEdited.ProjectPayload.StatePayload,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.body = body
@@ -5905,7 +5903,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-reopened/project/columns_url`.
                 public var columnsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-reopened/project/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-reopened/project/creator`.
                 public struct CreatorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-project-reopened/project/creator/avatar_url`.
@@ -6077,7 +6075,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-reopened/project/state`.
                 public var state: Components.Schemas.WebhookProjectReopened.ProjectPayload.StatePayload
                 /// - Remark: Generated from `#/components/schemas/webhook-project-reopened/project/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-reopened/project/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectPayload`.
@@ -6099,7 +6097,7 @@ public enum Components {
                 public init(
                     body: Swift.String? = nil,
                     columnsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     creator: Components.Schemas.WebhookProjectReopened.ProjectPayload.CreatorPayload? = nil,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
@@ -6108,7 +6106,7 @@ public enum Components {
                     number: Swift.Int,
                     ownerUrl: Swift.String,
                     state: Components.Schemas.WebhookProjectReopened.ProjectPayload.StatePayload,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.body = body
@@ -6197,17 +6195,17 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-projects-v2-item-archived/changes/archived_at`.
                 public struct ArchivedAtPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-projects-v2-item-archived/changes/archived_at/from`.
-                    public var from: Foundation.Date?
+                    public var from: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-projects-v2-item-archived/changes/archived_at/to`.
-                    public var to: Foundation.Date?
+                    public var to: Swift.String?
                     /// Creates a new `ArchivedAtPayload`.
                     ///
                     /// - Parameters:
                     ///   - from:
                     ///   - to:
                     public init(
-                        from: Foundation.Date? = nil,
-                        to: Foundation.Date? = nil
+                        from: Swift.String? = nil,
+                        to: Swift.String? = nil
                     ) {
                         self.from = from
                         self.to = to
@@ -6716,17 +6714,17 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-projects-v2-item-restored/changes/archived_at`.
                 public struct ArchivedAtPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-projects-v2-item-restored/changes/archived_at/from`.
-                    public var from: Foundation.Date?
+                    public var from: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-projects-v2-item-restored/changes/archived_at/to`.
-                    public var to: Foundation.Date?
+                    public var to: Swift.String?
                     /// Creates a new `ArchivedAtPayload`.
                     ///
                     /// - Parameters:
                     ///   - from:
                     ///   - to:
                     public init(
-                        from: Foundation.Date? = nil,
-                        to: Foundation.Date? = nil
+                        from: Swift.String? = nil,
+                        to: Swift.String? = nil
                     ) {
                         self.from = from
                         self.to = to

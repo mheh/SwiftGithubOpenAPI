@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -268,9 +266,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/integration/html_url`.
             public var htmlUrl: Swift.String
             /// - Remark: Generated from `#/components/schemas/integration/created_at`.
-            public var createdAt: Foundation.Date
+            public var createdAt: Swift.String
             /// - Remark: Generated from `#/components/schemas/integration/updated_at`.
-            public var updatedAt: Foundation.Date
+            public var updatedAt: Swift.String
             /// The set of permissions for the GitHub app
             ///
             /// - Remark: Generated from `#/components/schemas/integration/permissions`.
@@ -422,8 +420,8 @@ public enum Components {
                 description: Swift.String? = nil,
                 externalUrl: Swift.String,
                 htmlUrl: Swift.String,
-                createdAt: Foundation.Date,
-                updatedAt: Foundation.Date,
+                createdAt: Swift.String,
+                updatedAt: Swift.String,
                 permissions: Components.Schemas.Integration.PermissionsPayload,
                 events: [Swift.String],
                 installationsCount: Swift.Int? = nil,
@@ -638,9 +636,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -664,8 +662,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -959,11 +957,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -2029,9 +2027,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2410,9 +2408,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/nullable-integration/html_url`.
             public var htmlUrl: Swift.String
             /// - Remark: Generated from `#/components/schemas/nullable-integration/created_at`.
-            public var createdAt: Foundation.Date
+            public var createdAt: Swift.String
             /// - Remark: Generated from `#/components/schemas/nullable-integration/updated_at`.
-            public var updatedAt: Foundation.Date
+            public var updatedAt: Swift.String
             /// The set of permissions for the GitHub app
             ///
             /// - Remark: Generated from `#/components/schemas/nullable-integration/permissions`.
@@ -2564,8 +2562,8 @@ public enum Components {
                 description: Swift.String? = nil,
                 externalUrl: Swift.String,
                 htmlUrl: Swift.String,
-                createdAt: Foundation.Date,
-                updatedAt: Foundation.Date,
+                createdAt: Swift.String,
+                updatedAt: Swift.String,
                 permissions: Components.Schemas.NullableIntegration.PermissionsPayload,
                 events: [Swift.String],
                 installationsCount: Swift.Int? = nil,
@@ -2757,11 +2755,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/minimal-repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/minimal-repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/minimal-repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/minimal-repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/minimal-repository/permissions`.
             public struct PermissionsPayload: Codable, Hashable, Sendable {
                 /// - Remark: Generated from `#/components/schemas/minimal-repository/permissions/admin`.
@@ -3028,9 +3026,9 @@ public enum Components {
                 archived: Swift.Bool? = nil,
                 disabled: Swift.Bool? = nil,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 permissions: Components.Schemas.MinimalRepository.PermissionsPayload? = nil,
                 roleName: Swift.String? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -3401,9 +3399,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/deployment-simple/description`.
             public var description: Swift.String?
             /// - Remark: Generated from `#/components/schemas/deployment-simple/created_at`.
-            public var createdAt: Foundation.Date
+            public var createdAt: Swift.String
             /// - Remark: Generated from `#/components/schemas/deployment-simple/updated_at`.
-            public var updatedAt: Foundation.Date
+            public var updatedAt: Swift.String
             /// - Remark: Generated from `#/components/schemas/deployment-simple/statuses_url`.
             public var statusesUrl: Swift.String
             /// - Remark: Generated from `#/components/schemas/deployment-simple/repository_url`.
@@ -3443,8 +3441,8 @@ public enum Components {
                 originalEnvironment: Swift.String? = nil,
                 environment: Swift.String,
                 description: Swift.String? = nil,
-                createdAt: Foundation.Date,
-                updatedAt: Foundation.Date,
+                createdAt: Swift.String,
+                updatedAt: Swift.String,
                 statusesUrl: Swift.String,
                 repositoryUrl: Swift.String,
                 transientEnvironment: Swift.Bool? = nil,
@@ -3537,7 +3535,7 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/simple-check-suite/conclusion`.
             public var conclusion: Components.Schemas.SimpleCheckSuite.ConclusionPayload?
             /// - Remark: Generated from `#/components/schemas/simple-check-suite/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/simple-check-suite/head_branch`.
             public var headBranch: Swift.String?
             /// The SHA of the head commit that is being checked.
@@ -3563,7 +3561,7 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/simple-check-suite/status`.
             public var status: Components.Schemas.SimpleCheckSuite.StatusPayload?
             /// - Remark: Generated from `#/components/schemas/simple-check-suite/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/simple-check-suite/url`.
             public var url: Swift.String?
             /// Creates a new `SimpleCheckSuite`.
@@ -3588,7 +3586,7 @@ public enum Components {
                 app: Components.Schemas.Integration? = nil,
                 before: Swift.String? = nil,
                 conclusion: Components.Schemas.SimpleCheckSuite.ConclusionPayload? = nil,
-                createdAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
                 headBranch: Swift.String? = nil,
                 headSha: Swift.String? = nil,
                 id: Swift.Int? = nil,
@@ -3596,7 +3594,7 @@ public enum Components {
                 pullRequests: [Components.Schemas.PullRequestMinimal]? = nil,
                 repository: Components.Schemas.MinimalRepository? = nil,
                 status: Components.Schemas.SimpleCheckSuite.StatusPayload? = nil,
-                updatedAt: Foundation.Date? = nil,
+                updatedAt: Swift.String? = nil,
                 url: Swift.String? = nil
             ) {
                 self.after = after
@@ -3640,7 +3638,7 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/check-run-with-simple-check-suite/check_suite`.
             public var checkSuite: Components.Schemas.SimpleCheckSuite
             /// - Remark: Generated from `#/components/schemas/check-run-with-simple-check-suite/completed_at`.
-            public var completedAt: Foundation.Date?
+            public var completedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/check-run-with-simple-check-suite/conclusion`.
             @frozen public enum ConclusionPayload: String, Codable, Hashable, Sendable, CaseIterable {
                 case waiting = "waiting"
@@ -3725,7 +3723,7 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/check-run-with-simple-check-suite/pull_requests`.
             public var pullRequests: [Components.Schemas.PullRequestMinimal]
             /// - Remark: Generated from `#/components/schemas/check-run-with-simple-check-suite/started_at`.
-            public var startedAt: Foundation.Date
+            public var startedAt: Swift.String
             /// The phase of the lifecycle that the check is currently in.
             ///
             /// - Remark: Generated from `#/components/schemas/check-run-with-simple-check-suite/status`.
@@ -3764,7 +3762,7 @@ public enum Components {
             public init(
                 app: Components.Schemas.NullableIntegration? = nil,
                 checkSuite: Components.Schemas.SimpleCheckSuite,
-                completedAt: Foundation.Date? = nil,
+                completedAt: Swift.String? = nil,
                 conclusion: Components.Schemas.CheckRunWithSimpleCheckSuite.ConclusionPayload? = nil,
                 deployment: Components.Schemas.DeploymentSimple? = nil,
                 detailsUrl: Swift.String,
@@ -3776,7 +3774,7 @@ public enum Components {
                 nodeId: Swift.String,
                 output: Components.Schemas.CheckRunWithSimpleCheckSuite.OutputPayload,
                 pullRequests: [Components.Schemas.PullRequestMinimal],
-                startedAt: Foundation.Date,
+                startedAt: Swift.String,
                 status: Components.Schemas.CheckRunWithSimpleCheckSuite.StatusPayload,
                 url: Swift.String
             ) {
@@ -3983,7 +3981,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/app`.
                 public struct AppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/app/EventsPayload`.
@@ -4617,7 +4615,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `AppPayload`.
                     ///
                     /// - Parameters:
@@ -4634,7 +4632,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookCheckSuiteCompleted.CheckSuitePayload.AppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -4645,7 +4643,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookCheckSuiteCompleted.CheckSuitePayload.AppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookCheckSuiteCompleted.CheckSuitePayload.AppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -4703,7 +4701,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/conclusion`.
                 public var conclusion: Components.Schemas.WebhookCheckSuiteCompleted.CheckSuitePayload.ConclusionPayload?
                 /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// The head branch name the changes are on.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/head_branch`.
@@ -4715,7 +4713,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/head_commit/author`.
                     public struct AuthorPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/head_commit/author/date`.
-                        public var date: Foundation.Date?
+                        public var date: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/head_commit/author/email`.
                         public var email: Swift.String?
                         /// The git author's name.
@@ -4732,7 +4730,7 @@ public enum Components {
                         ///   - name: The git author's name.
                         ///   - username:
                         public init(
-                            date: Foundation.Date? = nil,
+                            date: Swift.String? = nil,
                             email: Swift.String? = nil,
                             name: Swift.String,
                             username: Swift.String? = nil
@@ -4758,7 +4756,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/head_commit/committer`.
                     public struct CommitterPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/head_commit/committer/date`.
-                        public var date: Foundation.Date?
+                        public var date: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/head_commit/committer/email`.
                         public var email: Swift.String?
                         /// The git author's name.
@@ -4775,7 +4773,7 @@ public enum Components {
                         ///   - name: The git author's name.
                         ///   - username:
                         public init(
-                            date: Foundation.Date? = nil,
+                            date: Swift.String? = nil,
                             email: Swift.String? = nil,
                             name: Swift.String,
                             username: Swift.String? = nil
@@ -5034,7 +5032,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/status`.
                 public var status: Components.Schemas.WebhookCheckSuiteCompleted.CheckSuitePayload.StatusPayload?
                 /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL that points to the check suite API resource.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-check-suite-completed/check_suite/url`.
@@ -5066,7 +5064,7 @@ public enum Components {
                     before: Swift.String? = nil,
                     checkRunsUrl: Swift.String,
                     conclusion: Components.Schemas.WebhookCheckSuiteCompleted.CheckSuitePayload.ConclusionPayload? = nil,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     headBranch: Swift.String? = nil,
                     headCommit: Components.Schemas.WebhookCheckSuiteCompleted.CheckSuitePayload.HeadCommitPayload,
                     headSha: Swift.String,
@@ -5077,7 +5075,7 @@ public enum Components {
                     rerequestable: Swift.Bool? = nil,
                     runsRerequestable: Swift.Bool? = nil,
                     status: Components.Schemas.WebhookCheckSuiteCompleted.CheckSuitePayload.StatusPayload? = nil,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.after = after

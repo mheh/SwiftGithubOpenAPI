@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -457,9 +455,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -483,8 +481,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -778,11 +776,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -1848,9 +1846,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2166,11 +2164,11 @@ public enum Components {
         /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         ///
         /// - Remark: Generated from `#/components/schemas/alert-created-at`.
-        public typealias AlertCreatedAt = Foundation.Date
+        public typealias AlertCreatedAt = Swift.String
         /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         ///
         /// - Remark: Generated from `#/components/schemas/alert-updated-at`.
-        public typealias AlertUpdatedAt = Foundation.Date
+        public typealias AlertUpdatedAt = Swift.String
         /// The REST API URL of the alert resource.
         ///
         /// - Remark: Generated from `#/components/schemas/alert-url`.
@@ -2182,11 +2180,11 @@ public enum Components {
         /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         ///
         /// - Remark: Generated from `#/components/schemas/alert-fixed-at`.
-        public typealias AlertFixedAt = Foundation.Date
+        public typealias AlertFixedAt = Swift.String
         /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         ///
         /// - Remark: Generated from `#/components/schemas/alert-dismissed-at`.
-        public typealias AlertDismissedAt = Foundation.Date
+        public typealias AlertDismissedAt = Swift.String
         /// Details for the vulnerable package.
         ///
         /// - Remark: Generated from `#/components/schemas/dependabot-alert-package`.
@@ -2573,15 +2571,15 @@ public enum Components {
             /// The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
             ///
             /// - Remark: Generated from `#/components/schemas/dependabot-alert-security-advisory/published_at`.
-            public var publishedAt: Foundation.Date
+            public var publishedAt: Swift.String
             /// The time that the advisory was last modified in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
             ///
             /// - Remark: Generated from `#/components/schemas/dependabot-alert-security-advisory/updated_at`.
-            public var updatedAt: Foundation.Date
+            public var updatedAt: Swift.String
             /// The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
             ///
             /// - Remark: Generated from `#/components/schemas/dependabot-alert-security-advisory/withdrawn_at`.
-            public var withdrawnAt: Foundation.Date?
+            public var withdrawnAt: Swift.String?
             /// Creates a new `DependabotAlertSecurityAdvisory`.
             ///
             /// - Parameters:
@@ -2609,9 +2607,9 @@ public enum Components {
                 cwes: Components.Schemas.DependabotAlertSecurityAdvisory.CwesPayload,
                 identifiers: Components.Schemas.DependabotAlertSecurityAdvisory.IdentifiersPayload,
                 references: Components.Schemas.DependabotAlertSecurityAdvisory.ReferencesPayload,
-                publishedAt: Foundation.Date,
-                updatedAt: Foundation.Date,
-                withdrawnAt: Foundation.Date? = nil
+                publishedAt: Swift.String,
+                updatedAt: Swift.String,
+                withdrawnAt: Swift.String? = nil
             ) {
                 self.ghsaId = ghsaId
                 self.cveId = cveId
@@ -2685,15 +2683,15 @@ public enum Components {
                     forKey: .references
                 )
                 self.publishedAt = try container.decode(
-                    Foundation.Date.self,
+                    Swift.String.self,
                     forKey: .publishedAt
                 )
                 self.updatedAt = try container.decode(
-                    Foundation.Date.self,
+                    Swift.String.self,
                     forKey: .updatedAt
                 )
                 self.withdrawnAt = try container.decodeIfPresent(
-                    Foundation.Date.self,
+                    Swift.String.self,
                     forKey: .withdrawnAt
                 )
                 try decoder.ensureNoAdditionalProperties(knownKeys: [

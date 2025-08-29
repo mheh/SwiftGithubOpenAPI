@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -437,9 +435,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -463,8 +461,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -758,11 +756,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -1828,9 +1826,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2357,11 +2355,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/nullable-repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/nullable-repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/nullable-repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/nullable-repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/nullable-repository/allow_rebase_merge`.
@@ -3427,9 +3425,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.NullableRepository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -3743,7 +3741,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-converted/project_card/content_url`.
                 public var contentUrl: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-converted/project_card/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-converted/project_card/creator`.
                 public struct CreatorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-project-card-converted/project_card/creator/avatar_url`.
@@ -3900,7 +3898,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-converted/project_card/project_url`.
                 public var projectUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-converted/project_card/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-converted/project_card/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectCardPayload`.
@@ -3925,13 +3923,13 @@ public enum Components {
                     columnId: Swift.Int,
                     columnUrl: Swift.String,
                     contentUrl: Swift.String? = nil,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     creator: Components.Schemas.WebhookProjectCardConverted.ProjectCardPayload.CreatorPayload? = nil,
                     id: Swift.Int,
                     nodeId: Swift.String,
                     note: Swift.String? = nil,
                     projectUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.afterId = afterId
@@ -4040,7 +4038,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-created/project_card/content_url`.
                 public var contentUrl: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-created/project_card/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-created/project_card/creator`.
                 public struct CreatorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-project-card-created/project_card/creator/avatar_url`.
@@ -4197,7 +4195,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-created/project_card/project_url`.
                 public var projectUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-created/project_card/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-created/project_card/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectCardPayload`.
@@ -4222,13 +4220,13 @@ public enum Components {
                     columnId: Swift.Int,
                     columnUrl: Swift.String,
                     contentUrl: Swift.String? = nil,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     creator: Components.Schemas.WebhookProjectCardCreated.ProjectCardPayload.CreatorPayload? = nil,
                     id: Swift.Int,
                     nodeId: Swift.String,
                     note: Swift.String? = nil,
                     projectUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.afterId = afterId
@@ -4333,7 +4331,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-deleted/project_card/content_url`.
                 public var contentUrl: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-deleted/project_card/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-deleted/project_card/creator`.
                 public struct CreatorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-project-card-deleted/project_card/creator/avatar_url`.
@@ -4491,7 +4489,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-deleted/project_card/project_url`.
                 public var projectUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-deleted/project_card/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-deleted/project_card/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectCardPayload`.
@@ -4516,13 +4514,13 @@ public enum Components {
                     columnId: Swift.Int? = nil,
                     columnUrl: Swift.String,
                     contentUrl: Swift.String? = nil,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     creator: Components.Schemas.WebhookProjectCardDeleted.ProjectCardPayload.CreatorPayload? = nil,
                     id: Swift.Int,
                     nodeId: Swift.String,
                     note: Swift.String? = nil,
                     projectUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.afterId = afterId
@@ -4659,7 +4657,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-edited/project_card/content_url`.
                 public var contentUrl: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-edited/project_card/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-edited/project_card/creator`.
                 public struct CreatorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-project-card-edited/project_card/creator/avatar_url`.
@@ -4816,7 +4814,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-edited/project_card/project_url`.
                 public var projectUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-edited/project_card/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-project-card-edited/project_card/url`.
                 public var url: Swift.String
                 /// Creates a new `ProjectCardPayload`.
@@ -4841,13 +4839,13 @@ public enum Components {
                     columnId: Swift.Int,
                     columnUrl: Swift.String,
                     contentUrl: Swift.String? = nil,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     creator: Components.Schemas.WebhookProjectCardEdited.ProjectCardPayload.CreatorPayload? = nil,
                     id: Swift.Int,
                     nodeId: Swift.String,
                     note: Swift.String? = nil,
                     projectUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.afterId = afterId
@@ -4990,7 +4988,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-project-card-moved/project_card/value1/content_url`.
                     public var contentUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-project-card-moved/project_card/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-project-card-moved/project_card/value1/creator`.
                     public struct CreatorPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-project-card-moved/project_card/value1/creator/avatar_url`.
@@ -5148,7 +5146,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-project-card-moved/project_card/value1/project_url`.
                     public var projectUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-project-card-moved/project_card/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-project-card-moved/project_card/value1/url`.
                     public var url: Swift.String
                     /// Creates a new `Value1Payload`.
@@ -5173,13 +5171,13 @@ public enum Components {
                         columnId: Swift.Int,
                         columnUrl: Swift.String,
                         contentUrl: Swift.String? = nil,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         creator: Components.Schemas.WebhookProjectCardMoved.ProjectCardPayload.Value1Payload.CreatorPayload? = nil,
                         id: Swift.Int,
                         nodeId: Swift.String,
                         note: Swift.String? = nil,
                         projectUrl: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String
                     ) {
                         self.afterId = afterId

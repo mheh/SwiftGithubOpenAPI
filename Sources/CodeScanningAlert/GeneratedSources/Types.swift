@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -455,9 +453,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -481,8 +479,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -776,11 +774,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -1846,9 +1844,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2205,11 +2203,11 @@ public enum Components {
                 /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-appeared-in-branch/alert/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-appeared-in-branch/alert/dismissed_at`.
-                public var dismissedAt: Foundation.Date?
+                public var dismissedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-appeared-in-branch/alert/dismissed_by`.
                 public struct DismissedByPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-appeared-in-branch/alert/dismissed_by/avatar_url`.
@@ -2750,8 +2748,8 @@ public enum Components {
                 ///   - tool:
                 ///   - url:
                 public init(
-                    createdAt: Foundation.Date,
-                    dismissedAt: Foundation.Date? = nil,
+                    createdAt: Swift.String,
+                    dismissedAt: Swift.String? = nil,
                     dismissedBy: Components.Schemas.WebhookCodeScanningAlertAppearedInBranch.AlertPayload.DismissedByPayload? = nil,
                     dismissedReason: Components.Schemas.WebhookCodeScanningAlertAppearedInBranch.AlertPayload.DismissedReasonPayload? = nil,
                     htmlUrl: Swift.String,
@@ -2873,11 +2871,11 @@ public enum Components {
                 /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-closed-by-user/alert/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-closed-by-user/alert/dismissed_at`.
-                public var dismissedAt: Foundation.Date
+                public var dismissedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-closed-by-user/alert/dismissed_by`.
                 public struct DismissedByPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-closed-by-user/alert/dismissed_by/avatar_url`.
@@ -3501,8 +3499,8 @@ public enum Components {
                 ///   - tool:
                 ///   - url:
                 public init(
-                    createdAt: Foundation.Date,
-                    dismissedAt: Foundation.Date,
+                    createdAt: Swift.String,
+                    dismissedAt: Swift.String,
                     dismissedBy: Components.Schemas.WebhookCodeScanningAlertClosedByUser.AlertPayload.DismissedByPayload? = nil,
                     dismissedReason: Components.Schemas.WebhookCodeScanningAlertClosedByUser.AlertPayload.DismissedReasonPayload? = nil,
                     htmlUrl: Swift.String,
@@ -3624,7 +3622,7 @@ public enum Components {
                 /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-created/alert/created_at`.
-                public var createdAt: Foundation.Date?
+                public var createdAt: Swift.String?
                 /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-created/alert/dismissed_at`.
@@ -4113,7 +4111,7 @@ public enum Components {
                 ///   - updatedAt:
                 ///   - url:
                 public init(
-                    createdAt: Foundation.Date? = nil,
+                    createdAt: Swift.String? = nil,
                     dismissedAt: OpenAPIRuntime.OpenAPIValueContainer? = nil,
                     dismissedBy: OpenAPIRuntime.OpenAPIValueContainer? = nil,
                     dismissedComment: Components.Schemas.CodeScanningAlertDismissedComment? = nil,
@@ -4248,11 +4246,11 @@ public enum Components {
                 /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-fixed/alert/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-fixed/alert/dismissed_at`.
-                public var dismissedAt: Foundation.Date?
+                public var dismissedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-fixed/alert/dismissed_by`.
                 public struct DismissedByPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-fixed/alert/dismissed_by/avatar_url`.
@@ -4878,8 +4876,8 @@ public enum Components {
                 ///   - tool:
                 ///   - url:
                 public init(
-                    createdAt: Foundation.Date,
-                    dismissedAt: Foundation.Date? = nil,
+                    createdAt: Swift.String,
+                    dismissedAt: Swift.String? = nil,
                     dismissedBy: Components.Schemas.WebhookCodeScanningAlertFixed.AlertPayload.DismissedByPayload? = nil,
                     dismissedReason: Components.Schemas.WebhookCodeScanningAlertFixed.AlertPayload.DismissedReasonPayload? = nil,
                     htmlUrl: Swift.String,
@@ -5004,7 +5002,7 @@ public enum Components {
                 /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-reopened/alert/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-reopened/alert/dismissed_at`.
@@ -5481,7 +5479,7 @@ public enum Components {
                 ///   - tool:
                 ///   - url:
                 public init(
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     dismissedAt: Swift.String? = nil,
                     dismissedBy: OpenAPIRuntime.OpenAPIObjectContainer? = nil,
                     dismissedReason: Swift.String? = nil,
@@ -5604,7 +5602,7 @@ public enum Components {
                 /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-reopened-by-user/alert/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-code-scanning-alert-reopened-by-user/alert/dismissed_at`.
@@ -6042,7 +6040,7 @@ public enum Components {
                 ///   - tool:
                 ///   - url:
                 public init(
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     dismissedAt: OpenAPIRuntime.OpenAPIValueContainer? = nil,
                     dismissedBy: OpenAPIRuntime.OpenAPIValueContainer? = nil,
                     dismissedReason: OpenAPIRuntime.OpenAPIValueContainer? = nil,

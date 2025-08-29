@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -656,11 +654,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -1726,9 +1724,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2120,7 +2118,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-ping/hook/config`.
                 public var config: Components.Schemas.WebhookPing.HookPayload.ConfigPayload
                 /// - Remark: Generated from `#/components/schemas/webhook-ping/hook/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-ping/hook/deliveries_url`.
                 public var deliveriesUrl: Swift.String?
                 /// Determines what events the hook is triggered for. Default: ['push'].
@@ -2150,7 +2148,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-ping/hook/type`.
                 public var _type: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-ping/hook/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-ping/hook/url`.
                 public var url: Swift.String?
                 /// Creates a new `HookPayload`.
@@ -2174,7 +2172,7 @@ public enum Components {
                     active: Swift.Bool,
                     appId: Swift.Int? = nil,
                     config: Components.Schemas.WebhookPing.HookPayload.ConfigPayload,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     deliveriesUrl: Swift.String? = nil,
                     events: [Swift.String],
                     id: Swift.Int,
@@ -2183,7 +2181,7 @@ public enum Components {
                     pingUrl: Swift.String? = nil,
                     testUrl: Swift.String? = nil,
                     _type: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String? = nil
                 ) {
                     self.active = active

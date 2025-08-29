@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -383,9 +381,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -409,8 +407,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -704,11 +702,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -1774,9 +1772,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2325,7 +2323,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/deployment/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/deployment/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/deployment/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/deployment/performed_via_github_app/EventsPayload`.
@@ -2955,7 +2953,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/deployment/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/deployment/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -2972,7 +2970,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookDeploymentCreated.DeploymentPayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -2983,7 +2981,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookDeploymentCreated.DeploymentPayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookDeploymentCreated.DeploymentPayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -3135,7 +3133,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow/badge_url`.
                 public var badgeUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow/id`.
@@ -3149,7 +3147,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow/state`.
                 public var state: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow/url`.
                 public var url: Swift.String
                 /// Creates a new `WorkflowPayload`.
@@ -3167,14 +3165,14 @@ public enum Components {
                 ///   - url:
                 public init(
                     badgeUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     name: Swift.String,
                     nodeId: Swift.String,
                     path: Swift.String,
                     state: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.badgeUrl = badgeUrl
@@ -3374,7 +3372,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow_run/conclusion`.
                 public var conclusion: Components.Schemas.WebhookDeploymentCreated.WorkflowRunPayload.ConclusionPayload?
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow_run/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow_run/display_title`.
                 public var displayTitle: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow_run/event`.
@@ -4418,7 +4416,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow_run/run_number`.
                 public var runNumber: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow_run/run_started_at`.
-                public var runStartedAt: Foundation.Date
+                public var runStartedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow_run/status`.
                 @frozen public enum StatusPayload: String, Codable, Hashable, Sendable, CaseIterable {
                     case requested = "requested"
@@ -4576,7 +4574,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow_run/triggering_actor`.
                 public var triggeringActor: Components.Schemas.WebhookDeploymentCreated.WorkflowRunPayload.TriggeringActorPayload?
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow_run/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow_run/url`.
                 public var url: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-created/workflow_run/workflow_id`.
@@ -4629,7 +4627,7 @@ public enum Components {
                     checkSuiteNodeId: Swift.String,
                     checkSuiteUrl: Swift.String? = nil,
                     conclusion: Components.Schemas.WebhookDeploymentCreated.WorkflowRunPayload.ConclusionPayload? = nil,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     displayTitle: Swift.String,
                     event: Swift.String,
                     headBranch: Swift.String,
@@ -4650,10 +4648,10 @@ public enum Components {
                     rerunUrl: Swift.String? = nil,
                     runAttempt: Swift.Int,
                     runNumber: Swift.Int,
-                    runStartedAt: Foundation.Date,
+                    runStartedAt: Swift.String,
                     status: Components.Schemas.WebhookDeploymentCreated.WorkflowRunPayload.StatusPayload,
                     triggeringActor: Components.Schemas.WebhookDeploymentCreated.WorkflowRunPayload.TriggeringActorPayload? = nil,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     workflowId: Swift.Int,
                     workflowUrl: Swift.String? = nil
@@ -4790,7 +4788,7 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/check_run`.
             public struct CheckRunPayload: Codable, Hashable, Sendable {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/check_run/completed_at`.
-                public var completedAt: Foundation.Date?
+                public var completedAt: Swift.String?
                 /// The result of the completed check run. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, `action_required` or `stale`. This value will be `null` until the check run has completed.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/check_run/conclusion`.
@@ -4830,7 +4828,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/check_run/node_id`.
                 public var nodeId: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/check_run/started_at`.
-                public var startedAt: Foundation.Date
+                public var startedAt: Swift.String
                 /// The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/check_run/status`.
@@ -4863,7 +4861,7 @@ public enum Components {
                 ///   - status: The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
                 ///   - url:
                 public init(
-                    completedAt: Foundation.Date? = nil,
+                    completedAt: Swift.String? = nil,
                     conclusion: Components.Schemas.WebhookDeploymentStatusCreated.CheckRunPayload.ConclusionPayload? = nil,
                     detailsUrl: Swift.String,
                     externalId: Swift.String,
@@ -4872,7 +4870,7 @@ public enum Components {
                     id: Swift.Int,
                     name: Swift.String,
                     nodeId: Swift.String,
-                    startedAt: Foundation.Date,
+                    startedAt: Swift.String,
                     status: Components.Schemas.WebhookDeploymentStatusCreated.CheckRunPayload.StatusPayload,
                     url: Swift.String
                 ) {
@@ -5109,7 +5107,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment/performed_via_github_app/EventsPayload`.
@@ -5739,7 +5737,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -5756,7 +5754,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookDeploymentStatusCreated.DeploymentPayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -5767,7 +5765,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookDeploymentStatusCreated.DeploymentPayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookDeploymentStatusCreated.DeploymentPayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -6076,7 +6074,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment_status/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment_status/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment_status/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment_status/performed_via_github_app/EventsPayload`.
@@ -6706,7 +6704,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment_status/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/deployment_status/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -6723,7 +6721,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookDeploymentStatusCreated.DeploymentStatusPayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -6734,7 +6732,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookDeploymentStatusCreated.DeploymentStatusPayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookDeploymentStatusCreated.DeploymentStatusPayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -6870,7 +6868,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow/badge_url`.
                 public var badgeUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow/id`.
@@ -6884,7 +6882,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow/state`.
                 public var state: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow/url`.
                 public var url: Swift.String
                 /// Creates a new `WorkflowPayload`.
@@ -6902,14 +6900,14 @@ public enum Components {
                 ///   - url:
                 public init(
                     badgeUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     name: Swift.String,
                     nodeId: Swift.String,
                     path: Swift.String,
                     state: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.badgeUrl = badgeUrl
@@ -7110,7 +7108,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow_run/conclusion`.
                 public var conclusion: Components.Schemas.WebhookDeploymentStatusCreated.WorkflowRunPayload.ConclusionPayload?
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow_run/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow_run/display_title`.
                 public var displayTitle: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow_run/event`.
@@ -8154,7 +8152,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow_run/run_number`.
                 public var runNumber: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow_run/run_started_at`.
-                public var runStartedAt: Foundation.Date
+                public var runStartedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow_run/status`.
                 @frozen public enum StatusPayload: String, Codable, Hashable, Sendable, CaseIterable {
                     case requested = "requested"
@@ -8312,7 +8310,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow_run/triggering_actor`.
                 public var triggeringActor: Components.Schemas.WebhookDeploymentStatusCreated.WorkflowRunPayload.TriggeringActorPayload?
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow_run/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow_run/url`.
                 public var url: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-deployment-status-created/workflow_run/workflow_id`.
@@ -8365,7 +8363,7 @@ public enum Components {
                     checkSuiteNodeId: Swift.String,
                     checkSuiteUrl: Swift.String? = nil,
                     conclusion: Components.Schemas.WebhookDeploymentStatusCreated.WorkflowRunPayload.ConclusionPayload? = nil,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     displayTitle: Swift.String,
                     event: Swift.String,
                     headBranch: Swift.String,
@@ -8386,10 +8384,10 @@ public enum Components {
                     rerunUrl: Swift.String? = nil,
                     runAttempt: Swift.Int,
                     runNumber: Swift.Int,
-                    runStartedAt: Foundation.Date,
+                    runStartedAt: Swift.String,
                     status: Components.Schemas.WebhookDeploymentStatusCreated.WorkflowRunPayload.StatusPayload,
                     triggeringActor: Components.Schemas.WebhookDeploymentStatusCreated.WorkflowRunPayload.TriggeringActorPayload? = nil,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     workflowId: Swift.Int,
                     workflowUrl: Swift.String? = nil

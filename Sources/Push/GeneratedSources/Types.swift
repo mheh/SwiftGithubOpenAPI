@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -226,9 +224,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -252,8 +250,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -417,7 +415,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-push/CommitsPayload/author`.
                 public struct AuthorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-push/CommitsPayload/author/date`.
-                    public var date: Foundation.Date?
+                    public var date: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-push/CommitsPayload/author/email`.
                     public var email: Swift.String?
                     /// The git author's name.
@@ -434,7 +432,7 @@ public enum Components {
                     ///   - name: The git author's name.
                     ///   - username:
                     public init(
-                        date: Foundation.Date? = nil,
+                        date: Swift.String? = nil,
                         email: Swift.String? = nil,
                         name: Swift.String,
                         username: Swift.String? = nil
@@ -460,7 +458,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-push/CommitsPayload/committer`.
                 public struct CommitterPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-push/CommitsPayload/committer/date`.
-                    public var date: Foundation.Date?
+                    public var date: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-push/CommitsPayload/committer/email`.
                     public var email: Swift.String?
                     /// The git author's name.
@@ -477,7 +475,7 @@ public enum Components {
                     ///   - name: The git author's name.
                     ///   - username:
                     public init(
-                        date: Foundation.Date? = nil,
+                        date: Swift.String? = nil,
                         email: Swift.String? = nil,
                         name: Swift.String,
                         username: Swift.String? = nil
@@ -519,7 +517,7 @@ public enum Components {
                 /// The ISO 8601 timestamp of the commit.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-push/CommitsPayload/timestamp`.
-                public var timestamp: Foundation.Date
+                public var timestamp: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-push/CommitsPayload/tree_id`.
                 public var treeId: Swift.String
                 /// URL that points to the commit API resource.
@@ -549,7 +547,7 @@ public enum Components {
                     message: Swift.String,
                     modified: [Swift.String]? = nil,
                     removed: [Swift.String]? = nil,
-                    timestamp: Foundation.Date,
+                    timestamp: Swift.String,
                     treeId: Swift.String,
                     url: Swift.String
                 ) {
@@ -616,7 +614,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-push/head_commit/author`.
                 public struct AuthorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-push/head_commit/author/date`.
-                    public var date: Foundation.Date?
+                    public var date: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-push/head_commit/author/email`.
                     public var email: Swift.String?
                     /// The git author's name.
@@ -633,7 +631,7 @@ public enum Components {
                     ///   - name: The git author's name.
                     ///   - username:
                     public init(
-                        date: Foundation.Date? = nil,
+                        date: Swift.String? = nil,
                         email: Swift.String? = nil,
                         name: Swift.String,
                         username: Swift.String? = nil
@@ -659,7 +657,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-push/head_commit/committer`.
                 public struct CommitterPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-push/head_commit/committer/date`.
-                    public var date: Foundation.Date?
+                    public var date: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-push/head_commit/committer/email`.
                     public var email: Swift.String?
                     /// The git author's name.
@@ -676,7 +674,7 @@ public enum Components {
                     ///   - name: The git author's name.
                     ///   - username:
                     public init(
-                        date: Foundation.Date? = nil,
+                        date: Swift.String? = nil,
                         email: Swift.String? = nil,
                         name: Swift.String,
                         username: Swift.String? = nil
@@ -718,7 +716,7 @@ public enum Components {
                 /// The ISO 8601 timestamp of the commit.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-push/head_commit/timestamp`.
-                public var timestamp: Foundation.Date
+                public var timestamp: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-push/head_commit/tree_id`.
                 public var treeId: Swift.String
                 /// URL that points to the commit API resource.
@@ -748,7 +746,7 @@ public enum Components {
                     message: Swift.String,
                     modified: [Swift.String]? = nil,
                     removed: [Swift.String]? = nil,
-                    timestamp: Foundation.Date,
+                    timestamp: Swift.String,
                     treeId: Swift.String,
                     url: Swift.String
                 ) {
@@ -789,7 +787,7 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/webhook-push/pusher`.
             public struct PusherPayload: Codable, Hashable, Sendable {
                 /// - Remark: Generated from `#/components/schemas/webhook-push/pusher/date`.
-                public var date: Foundation.Date?
+                public var date: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-push/pusher/email`.
                 public var email: Swift.String?
                 /// The git author's name.
@@ -806,7 +804,7 @@ public enum Components {
                 ///   - name: The git author's name.
                 ///   - username:
                 public init(
-                    date: Foundation.Date? = nil,
+                    date: Swift.String? = nil,
                     email: Swift.String? = nil,
                     name: Swift.String,
                     username: Swift.String? = nil
@@ -888,7 +886,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-push/repository/created_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-push/repository/created_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -1268,7 +1266,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-push/repository/pushed_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-push/repository/pushed_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -1331,7 +1329,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-push/repository/trees_url`.
                 public var treesUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-push/repository/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-push/repository/url`.
                 public var url: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-push/repository/visibility`.
@@ -1528,7 +1526,7 @@ public enum Components {
                     teamsUrl: Swift.String,
                     topics: [Swift.String],
                     treesUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     visibility: Components.Schemas.WebhookPush.RepositoryPayload.VisibilityPayload,
                     watchers: Swift.Int,

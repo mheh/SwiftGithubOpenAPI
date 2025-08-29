@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -993,9 +991,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -1019,8 +1017,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -1314,11 +1312,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -2384,9 +2382,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2722,9 +2720,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/nullable-integration/html_url`.
             public var htmlUrl: Swift.String
             /// - Remark: Generated from `#/components/schemas/nullable-integration/created_at`.
-            public var createdAt: Foundation.Date
+            public var createdAt: Swift.String
             /// - Remark: Generated from `#/components/schemas/nullable-integration/updated_at`.
-            public var updatedAt: Foundation.Date
+            public var updatedAt: Swift.String
             /// The set of permissions for the GitHub app
             ///
             /// - Remark: Generated from `#/components/schemas/nullable-integration/permissions`.
@@ -2876,8 +2874,8 @@ public enum Components {
                 description: Swift.String? = nil,
                 externalUrl: Swift.String,
                 htmlUrl: Swift.String,
-                createdAt: Foundation.Date,
-                updatedAt: Foundation.Date,
+                createdAt: Swift.String,
+                updatedAt: Swift.String,
                 permissions: Components.Schemas.NullableIntegration.PermissionsPayload,
                 events: [Swift.String],
                 installationsCount: Swift.Int? = nil,
@@ -2987,7 +2985,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/comment/body`.
                 public var body: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/comment/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/comment/html_url`.
                 public var htmlUrl: Swift.String
                 /// Unique identifier of the issue comment
@@ -3074,7 +3072,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/comment/reactions`.
                 public var reactions: Components.Schemas.WebhookIssueCommentCreated.CommentPayload.ReactionsPayload
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/comment/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue comment
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/comment/url`.
@@ -3242,14 +3240,14 @@ public enum Components {
                 public init(
                     authorAssociation: Components.Schemas.WebhookIssueCommentCreated.CommentPayload.AuthorAssociationPayload,
                     body: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     issueUrl: Swift.String,
                     nodeId: Swift.String,
                     performedViaGithubApp: Components.Schemas.NullableIntegration? = nil,
                     reactions: Components.Schemas.WebhookIssueCommentCreated.CommentPayload.ReactionsPayload,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssueCommentCreated.CommentPayload.UserPayload? = nil
                 ) {
@@ -3623,13 +3621,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/events_url`.
@@ -3710,11 +3708,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/creator/avatar_url`.
@@ -3864,7 +3862,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/id`.
@@ -3895,7 +3893,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -3918,12 +3916,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssueCommentCreated.IssuePayload.Value1Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -3932,7 +3930,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssueCommentCreated.IssuePayload.Value1Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -3984,7 +3982,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/performed_via_github_app/EventsPayload`.
@@ -4613,7 +4611,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -4630,7 +4628,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssueCommentCreated.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -4641,7 +4639,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssueCommentCreated.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssueCommentCreated.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -4682,7 +4680,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/pull_request/url`.
@@ -4698,7 +4696,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -4813,7 +4811,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-created/issue/value1/url`.
@@ -5003,10 +5001,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssueCommentCreated.IssuePayload.Value1Payload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssueCommentCreated.IssuePayload.Value1Payload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -5025,7 +5023,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssueCommentCreated.IssuePayload.Value1Payload.UserPayload? = nil
                     ) {
@@ -5782,7 +5780,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/comment/body`.
                 public var body: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/comment/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/comment/html_url`.
                 public var htmlUrl: Swift.String
                 /// Unique identifier of the issue comment
@@ -5869,7 +5867,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/comment/reactions`.
                 public var reactions: Components.Schemas.WebhookIssueCommentDeleted.CommentPayload.ReactionsPayload
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/comment/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue comment
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/comment/url`.
@@ -6038,14 +6036,14 @@ public enum Components {
                 public init(
                     authorAssociation: Components.Schemas.WebhookIssueCommentDeleted.CommentPayload.AuthorAssociationPayload,
                     body: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     issueUrl: Swift.String,
                     nodeId: Swift.String,
                     performedViaGithubApp: Components.Schemas.NullableIntegration? = nil,
                     reactions: Components.Schemas.WebhookIssueCommentDeleted.CommentPayload.ReactionsPayload,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssueCommentDeleted.CommentPayload.UserPayload? = nil
                 ) {
@@ -6419,13 +6417,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/events_url`.
@@ -6506,11 +6504,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/creator/avatar_url`.
@@ -6660,7 +6658,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/id`.
@@ -6691,7 +6689,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -6714,12 +6712,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssueCommentDeleted.IssuePayload.Value1Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -6728,7 +6726,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssueCommentDeleted.IssuePayload.Value1Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -6780,7 +6778,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/performed_via_github_app/EventsPayload`.
@@ -7405,7 +7403,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -7422,7 +7420,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssueCommentDeleted.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -7433,7 +7431,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssueCommentDeleted.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssueCommentDeleted.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -7474,7 +7472,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/pull_request/url`.
@@ -7490,7 +7488,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -7605,7 +7603,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-deleted/issue/value1/url`.
@@ -7795,10 +7793,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssueCommentDeleted.IssuePayload.Value1Payload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssueCommentDeleted.IssuePayload.Value1Payload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -7817,7 +7815,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssueCommentDeleted.IssuePayload.Value1Payload.UserPayload? = nil
                     ) {
@@ -8612,7 +8610,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/comment/body`.
                 public var body: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/comment/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/comment/html_url`.
                 public var htmlUrl: Swift.String
                 /// Unique identifier of the issue comment
@@ -8699,7 +8697,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/comment/reactions`.
                 public var reactions: Components.Schemas.WebhookIssueCommentEdited.CommentPayload.ReactionsPayload
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/comment/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue comment
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/comment/url`.
@@ -8868,14 +8866,14 @@ public enum Components {
                 public init(
                     authorAssociation: Components.Schemas.WebhookIssueCommentEdited.CommentPayload.AuthorAssociationPayload,
                     body: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     issueUrl: Swift.String,
                     nodeId: Swift.String,
                     performedViaGithubApp: Components.Schemas.NullableIntegration? = nil,
                     reactions: Components.Schemas.WebhookIssueCommentEdited.CommentPayload.ReactionsPayload,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssueCommentEdited.CommentPayload.UserPayload? = nil
                 ) {
@@ -9249,13 +9247,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/events_url`.
@@ -9336,11 +9334,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/creator/avatar_url`.
@@ -9490,7 +9488,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/id`.
@@ -9521,7 +9519,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -9544,12 +9542,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssueCommentEdited.IssuePayload.Value1Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -9558,7 +9556,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssueCommentEdited.IssuePayload.Value1Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -9610,7 +9608,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/performed_via_github_app/EventsPayload`.
@@ -10238,7 +10236,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -10255,7 +10253,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssueCommentEdited.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -10266,7 +10264,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssueCommentEdited.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssueCommentEdited.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -10307,7 +10305,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/pull_request/url`.
@@ -10323,7 +10321,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -10438,7 +10436,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issue-comment-edited/issue/value1/url`.
@@ -10628,10 +10626,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssueCommentEdited.IssuePayload.Value1Payload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssueCommentEdited.IssuePayload.Value1Payload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -10650,7 +10648,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssueCommentEdited.IssuePayload.Value1Payload.UserPayload? = nil
                     ) {
@@ -11868,13 +11866,13 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/closed_at`.
-                public var closedAt: Foundation.Date?
+                public var closedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/comments_url`.
                 public var commentsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/draft`.
                 public var draft: Swift.Bool?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/events_url`.
@@ -11955,11 +11953,11 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone`.
                 public struct MilestonePayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/closed_issues`.
                     public var closedIssues: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/creator`.
                     public struct CreatorPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/creator/avatar_url`.
@@ -12109,7 +12107,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/due_on`.
-                    public var dueOn: Foundation.Date?
+                    public var dueOn: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/id`.
@@ -12140,7 +12138,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/milestone/url`.
                     public var url: Swift.String
                     /// Creates a new `MilestonePayload`.
@@ -12163,12 +12161,12 @@ public enum Components {
                     ///   - updatedAt:
                     ///   - url:
                     public init(
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         closedIssues: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         creator: Components.Schemas.WebhookIssuesAssigned.IssuePayload.MilestonePayload.CreatorPayload? = nil,
                         description: Swift.String? = nil,
-                        dueOn: Foundation.Date? = nil,
+                        dueOn: Swift.String? = nil,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         labelsUrl: Swift.String,
@@ -12177,7 +12175,7 @@ public enum Components {
                         openIssues: Swift.Int,
                         state: Components.Schemas.WebhookIssuesAssigned.IssuePayload.MilestonePayload.StatePayload,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String
                     ) {
                         self.closedAt = closedAt
@@ -12229,7 +12227,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/performed_via_github_app/EventsPayload`.
@@ -12857,7 +12855,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -12874,7 +12872,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookIssuesAssigned.IssuePayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -12885,7 +12883,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookIssuesAssigned.IssuePayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookIssuesAssigned.IssuePayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -12926,7 +12924,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/pull_request/html_url`.
                     public var htmlUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/pull_request/merged_at`.
-                    public var mergedAt: Foundation.Date?
+                    public var mergedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/pull_request/patch_url`.
                     public var patchUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/pull_request/url`.
@@ -12942,7 +12940,7 @@ public enum Components {
                     public init(
                         diffUrl: Swift.String? = nil,
                         htmlUrl: Swift.String? = nil,
-                        mergedAt: Foundation.Date? = nil,
+                        mergedAt: Swift.String? = nil,
                         patchUrl: Swift.String? = nil,
                         url: Swift.String? = nil
                     ) {
@@ -13057,7 +13055,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-assigned/issue/url`.
@@ -13247,10 +13245,10 @@ public enum Components {
                     assignees: Components.Schemas.WebhookIssuesAssigned.IssuePayload.AssigneesPayload,
                     authorAssociation: Components.Schemas.WebhookIssuesAssigned.IssuePayload.AuthorAssociationPayload,
                     body: Swift.String? = nil,
-                    closedAt: Foundation.Date? = nil,
+                    closedAt: Swift.String? = nil,
                     comments: Swift.Int,
                     commentsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     draft: Swift.Bool? = nil,
                     eventsUrl: Swift.String,
                     htmlUrl: Swift.String,
@@ -13269,7 +13267,7 @@ public enum Components {
                     stateReason: Swift.String? = nil,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssuesAssigned.IssuePayload.UserPayload? = nil
                 ) {
@@ -13738,13 +13736,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/events_url`.
@@ -13825,11 +13823,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/creator/avatar_url`.
@@ -13979,7 +13977,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/id`.
@@ -14010,7 +14008,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -14033,12 +14031,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssuesClosed.IssuePayload.Value1Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -14047,7 +14045,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssuesClosed.IssuePayload.Value1Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -14099,7 +14097,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/performed_via_github_app/EventsPayload`.
@@ -14728,7 +14726,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -14745,7 +14743,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssuesClosed.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -14756,7 +14754,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssuesClosed.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssuesClosed.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -14797,7 +14795,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/pull_request/url`.
@@ -14813,7 +14811,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -14928,7 +14926,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-closed/issue/value1/url`.
@@ -15118,10 +15116,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssuesClosed.IssuePayload.Value1Payload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssuesClosed.IssuePayload.Value1Payload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -15140,7 +15138,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssuesClosed.IssuePayload.Value1Payload.UserPayload? = nil
                     ) {
@@ -15990,13 +15988,13 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/closed_at`.
-                public var closedAt: Foundation.Date?
+                public var closedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/comments_url`.
                 public var commentsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/draft`.
                 public var draft: Swift.Bool?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/events_url`.
@@ -16077,11 +16075,11 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone`.
                 public struct MilestonePayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/closed_issues`.
                     public var closedIssues: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/creator`.
                     public struct CreatorPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/creator/avatar_url`.
@@ -16230,7 +16228,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/due_on`.
-                    public var dueOn: Foundation.Date?
+                    public var dueOn: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/id`.
@@ -16261,7 +16259,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/milestone/url`.
                     public var url: Swift.String
                     /// Creates a new `MilestonePayload`.
@@ -16284,12 +16282,12 @@ public enum Components {
                     ///   - updatedAt:
                     ///   - url:
                     public init(
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         closedIssues: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         creator: Components.Schemas.WebhookIssuesDeleted.IssuePayload.MilestonePayload.CreatorPayload? = nil,
                         description: Swift.String? = nil,
-                        dueOn: Foundation.Date? = nil,
+                        dueOn: Swift.String? = nil,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         labelsUrl: Swift.String,
@@ -16298,7 +16296,7 @@ public enum Components {
                         openIssues: Swift.Int,
                         state: Components.Schemas.WebhookIssuesDeleted.IssuePayload.MilestonePayload.StatePayload,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String
                     ) {
                         self.closedAt = closedAt
@@ -16350,7 +16348,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/performed_via_github_app/EventsPayload`.
@@ -16976,7 +16974,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -16993,7 +16991,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookIssuesDeleted.IssuePayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -17004,7 +17002,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookIssuesDeleted.IssuePayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookIssuesDeleted.IssuePayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -17045,7 +17043,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/pull_request/html_url`.
                     public var htmlUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/pull_request/merged_at`.
-                    public var mergedAt: Foundation.Date?
+                    public var mergedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/pull_request/patch_url`.
                     public var patchUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/pull_request/url`.
@@ -17061,7 +17059,7 @@ public enum Components {
                     public init(
                         diffUrl: Swift.String? = nil,
                         htmlUrl: Swift.String? = nil,
-                        mergedAt: Foundation.Date? = nil,
+                        mergedAt: Swift.String? = nil,
                         patchUrl: Swift.String? = nil,
                         url: Swift.String? = nil
                     ) {
@@ -17176,7 +17174,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-deleted/issue/url`.
@@ -17365,10 +17363,10 @@ public enum Components {
                     assignees: Components.Schemas.WebhookIssuesDeleted.IssuePayload.AssigneesPayload,
                     authorAssociation: Components.Schemas.WebhookIssuesDeleted.IssuePayload.AuthorAssociationPayload,
                     body: Swift.String? = nil,
-                    closedAt: Foundation.Date? = nil,
+                    closedAt: Swift.String? = nil,
                     comments: Swift.Int,
                     commentsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     draft: Swift.Bool? = nil,
                     eventsUrl: Swift.String,
                     htmlUrl: Swift.String,
@@ -17387,7 +17385,7 @@ public enum Components {
                     stateReason: Swift.String? = nil,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssuesDeleted.IssuePayload.UserPayload? = nil
                 ) {
@@ -17846,13 +17844,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/events_url`.
@@ -17933,11 +17931,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/creator/avatar_url`.
@@ -18087,7 +18085,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/id`.
@@ -18118,7 +18116,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -18141,12 +18139,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssuesDemilestoned.IssuePayload.Value1Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -18155,7 +18153,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssuesDemilestoned.IssuePayload.Value1Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -18207,7 +18205,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/performed_via_github_app/EventsPayload`.
@@ -18833,7 +18831,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -18850,7 +18848,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssuesDemilestoned.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -18861,7 +18859,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssuesDemilestoned.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssuesDemilestoned.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -18902,7 +18900,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/pull_request/url`.
@@ -18918,7 +18916,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -19033,7 +19031,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value1/url`.
@@ -19223,10 +19221,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssuesDemilestoned.IssuePayload.Value1Payload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssuesDemilestoned.IssuePayload.Value1Payload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -19245,7 +19243,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssuesDemilestoned.IssuePayload.Value1Payload.UserPayload? = nil
                     ) {
@@ -19354,11 +19352,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/creator/avatar_url`.
@@ -19508,7 +19506,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/id`.
@@ -19539,7 +19537,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/issue/value2/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -19562,12 +19560,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssuesDemilestoned.IssuePayload.Value2Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -19576,7 +19574,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssuesDemilestoned.IssuePayload.Value2Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -19978,11 +19976,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone`.
             public struct MilestonePayload: Codable, Hashable, Sendable {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/closed_at`.
-                public var closedAt: Foundation.Date?
+                public var closedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/closed_issues`.
                 public var closedIssues: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/creator`.
                 public struct CreatorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/creator/avatar_url`.
@@ -20132,7 +20130,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/description`.
                 public var description: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/due_on`.
-                public var dueOn: Foundation.Date?
+                public var dueOn: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/id`.
@@ -20163,7 +20161,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-demilestoned/milestone/url`.
                 public var url: Swift.String
                 /// Creates a new `MilestonePayload`.
@@ -20186,12 +20184,12 @@ public enum Components {
                 ///   - updatedAt:
                 ///   - url:
                 public init(
-                    closedAt: Foundation.Date? = nil,
+                    closedAt: Swift.String? = nil,
                     closedIssues: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     creator: Components.Schemas.WebhookIssuesDemilestoned.MilestonePayload.CreatorPayload? = nil,
                     description: Swift.String? = nil,
-                    dueOn: Foundation.Date? = nil,
+                    dueOn: Swift.String? = nil,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     labelsUrl: Swift.String,
@@ -20200,7 +20198,7 @@ public enum Components {
                     openIssues: Swift.Int,
                     state: Components.Schemas.WebhookIssuesDemilestoned.MilestonePayload.StatePayload,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.closedAt = closedAt
@@ -20695,13 +20693,13 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/closed_at`.
-                public var closedAt: Foundation.Date?
+                public var closedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/comments_url`.
                 public var commentsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/draft`.
                 public var draft: Swift.Bool?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/events_url`.
@@ -20782,11 +20780,11 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone`.
                 public struct MilestonePayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/closed_issues`.
                     public var closedIssues: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/creator`.
                     public struct CreatorPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/creator/avatar_url`.
@@ -20936,7 +20934,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/due_on`.
-                    public var dueOn: Foundation.Date?
+                    public var dueOn: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/id`.
@@ -20967,7 +20965,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/milestone/url`.
                     public var url: Swift.String
                     /// Creates a new `MilestonePayload`.
@@ -20990,12 +20988,12 @@ public enum Components {
                     ///   - updatedAt:
                     ///   - url:
                     public init(
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         closedIssues: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         creator: Components.Schemas.WebhookIssuesEdited.IssuePayload.MilestonePayload.CreatorPayload? = nil,
                         description: Swift.String? = nil,
-                        dueOn: Foundation.Date? = nil,
+                        dueOn: Swift.String? = nil,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         labelsUrl: Swift.String,
@@ -21004,7 +21002,7 @@ public enum Components {
                         openIssues: Swift.Int,
                         state: Components.Schemas.WebhookIssuesEdited.IssuePayload.MilestonePayload.StatePayload,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String
                     ) {
                         self.closedAt = closedAt
@@ -21056,7 +21054,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/performed_via_github_app/EventsPayload`.
@@ -21685,7 +21683,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -21702,7 +21700,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookIssuesEdited.IssuePayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -21713,7 +21711,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookIssuesEdited.IssuePayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookIssuesEdited.IssuePayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -21754,7 +21752,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/pull_request/html_url`.
                     public var htmlUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/pull_request/merged_at`.
-                    public var mergedAt: Foundation.Date?
+                    public var mergedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/pull_request/patch_url`.
                     public var patchUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/pull_request/url`.
@@ -21770,7 +21768,7 @@ public enum Components {
                     public init(
                         diffUrl: Swift.String? = nil,
                         htmlUrl: Swift.String? = nil,
-                        mergedAt: Foundation.Date? = nil,
+                        mergedAt: Swift.String? = nil,
                         patchUrl: Swift.String? = nil,
                         url: Swift.String? = nil
                     ) {
@@ -21885,7 +21883,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-edited/issue/url`.
@@ -22075,10 +22073,10 @@ public enum Components {
                     assignees: Components.Schemas.WebhookIssuesEdited.IssuePayload.AssigneesPayload,
                     authorAssociation: Components.Schemas.WebhookIssuesEdited.IssuePayload.AuthorAssociationPayload,
                     body: Swift.String? = nil,
-                    closedAt: Foundation.Date? = nil,
+                    closedAt: Swift.String? = nil,
                     comments: Swift.Int,
                     commentsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     draft: Swift.Bool? = nil,
                     eventsUrl: Swift.String,
                     htmlUrl: Swift.String,
@@ -22097,7 +22095,7 @@ public enum Components {
                     stateReason: Swift.String? = nil,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssuesEdited.IssuePayload.UserPayload? = nil
                 ) {
@@ -22623,13 +22621,13 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/closed_at`.
-                public var closedAt: Foundation.Date?
+                public var closedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/comments_url`.
                 public var commentsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/draft`.
                 public var draft: Swift.Bool?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/events_url`.
@@ -22710,11 +22708,11 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone`.
                 public struct MilestonePayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/closed_issues`.
                     public var closedIssues: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/creator`.
                     public struct CreatorPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/creator/avatar_url`.
@@ -22864,7 +22862,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/due_on`.
-                    public var dueOn: Foundation.Date?
+                    public var dueOn: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/id`.
@@ -22895,7 +22893,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/milestone/url`.
                     public var url: Swift.String
                     /// Creates a new `MilestonePayload`.
@@ -22918,12 +22916,12 @@ public enum Components {
                     ///   - updatedAt:
                     ///   - url:
                     public init(
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         closedIssues: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         creator: Components.Schemas.WebhookIssuesLabeled.IssuePayload.MilestonePayload.CreatorPayload? = nil,
                         description: Swift.String? = nil,
-                        dueOn: Foundation.Date? = nil,
+                        dueOn: Swift.String? = nil,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         labelsUrl: Swift.String,
@@ -22932,7 +22930,7 @@ public enum Components {
                         openIssues: Swift.Int,
                         state: Components.Schemas.WebhookIssuesLabeled.IssuePayload.MilestonePayload.StatePayload,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String
                     ) {
                         self.closedAt = closedAt
@@ -22984,7 +22982,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/performed_via_github_app/EventsPayload`.
@@ -23612,7 +23610,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -23629,7 +23627,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookIssuesLabeled.IssuePayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -23640,7 +23638,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookIssuesLabeled.IssuePayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookIssuesLabeled.IssuePayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -23681,7 +23679,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/pull_request/html_url`.
                     public var htmlUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/pull_request/merged_at`.
-                    public var mergedAt: Foundation.Date?
+                    public var mergedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/pull_request/patch_url`.
                     public var patchUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/pull_request/url`.
@@ -23697,7 +23695,7 @@ public enum Components {
                     public init(
                         diffUrl: Swift.String? = nil,
                         htmlUrl: Swift.String? = nil,
-                        mergedAt: Foundation.Date? = nil,
+                        mergedAt: Swift.String? = nil,
                         patchUrl: Swift.String? = nil,
                         url: Swift.String? = nil
                     ) {
@@ -23812,7 +23810,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-labeled/issue/url`.
@@ -24002,10 +24000,10 @@ public enum Components {
                     assignees: Components.Schemas.WebhookIssuesLabeled.IssuePayload.AssigneesPayload,
                     authorAssociation: Components.Schemas.WebhookIssuesLabeled.IssuePayload.AuthorAssociationPayload,
                     body: Swift.String? = nil,
-                    closedAt: Foundation.Date? = nil,
+                    closedAt: Swift.String? = nil,
                     comments: Swift.Int,
                     commentsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     draft: Swift.Bool? = nil,
                     eventsUrl: Swift.String,
                     htmlUrl: Swift.String,
@@ -24024,7 +24022,7 @@ public enum Components {
                     stateReason: Swift.String? = nil,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssuesLabeled.IssuePayload.UserPayload? = nil
                 ) {
@@ -24546,13 +24544,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/events_url`.
@@ -24633,11 +24631,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/creator/avatar_url`.
@@ -24786,7 +24784,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/id`.
@@ -24817,7 +24815,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -24840,12 +24838,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssuesLocked.IssuePayload.Value1Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -24854,7 +24852,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssuesLocked.IssuePayload.Value1Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -24906,7 +24904,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/performed_via_github_app/EventsPayload`.
@@ -25533,7 +25531,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -25550,7 +25548,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssuesLocked.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -25561,7 +25559,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssuesLocked.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssuesLocked.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -25602,7 +25600,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/pull_request/url`.
@@ -25618,7 +25616,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -25733,7 +25731,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-locked/issue/value1/url`.
@@ -25922,10 +25920,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssuesLocked.IssuePayload.Value1Payload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssuesLocked.IssuePayload.Value1Payload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -25944,7 +25942,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssuesLocked.IssuePayload.Value1Payload.UserPayload? = nil
                     ) {
@@ -26797,13 +26795,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/events_url`.
@@ -26884,11 +26882,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/creator/avatar_url`.
@@ -27038,7 +27036,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/id`.
@@ -27069,7 +27067,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -27092,12 +27090,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssuesMilestoned.IssuePayload.Value1Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -27106,7 +27104,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssuesMilestoned.IssuePayload.Value1Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -27158,7 +27156,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/performed_via_github_app/EventsPayload`.
@@ -27785,7 +27783,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -27802,7 +27800,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssuesMilestoned.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -27813,7 +27811,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssuesMilestoned.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssuesMilestoned.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -27854,7 +27852,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/pull_request/url`.
@@ -27870,7 +27868,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -27985,7 +27983,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value1/url`.
@@ -28174,10 +28172,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssuesMilestoned.IssuePayload.Value1Payload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssuesMilestoned.IssuePayload.Value1Payload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -28196,7 +28194,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssuesMilestoned.IssuePayload.Value1Payload.UserPayload? = nil
                     ) {
@@ -28305,11 +28303,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/creator/avatar_url`.
@@ -28459,7 +28457,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/id`.
@@ -28490,7 +28488,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/issue/value2/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -28513,12 +28511,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssuesMilestoned.IssuePayload.Value2Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -28527,7 +28525,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssuesMilestoned.IssuePayload.Value2Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -28929,11 +28927,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone`.
             public struct MilestonePayload: Codable, Hashable, Sendable {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/closed_at`.
-                public var closedAt: Foundation.Date?
+                public var closedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/closed_issues`.
                 public var closedIssues: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/creator`.
                 public struct CreatorPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/creator/avatar_url`.
@@ -29083,7 +29081,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/description`.
                 public var description: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/due_on`.
-                public var dueOn: Foundation.Date?
+                public var dueOn: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/id`.
@@ -29114,7 +29112,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-milestoned/milestone/url`.
                 public var url: Swift.String
                 /// Creates a new `MilestonePayload`.
@@ -29137,12 +29135,12 @@ public enum Components {
                 ///   - updatedAt:
                 ///   - url:
                 public init(
-                    closedAt: Foundation.Date? = nil,
+                    closedAt: Swift.String? = nil,
                     closedIssues: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     creator: Components.Schemas.WebhookIssuesMilestoned.MilestonePayload.CreatorPayload? = nil,
                     description: Swift.String? = nil,
-                    dueOn: Foundation.Date? = nil,
+                    dueOn: Swift.String? = nil,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     labelsUrl: Swift.String,
@@ -29151,7 +29149,7 @@ public enum Components {
                     openIssues: Swift.Int,
                     state: Components.Schemas.WebhookIssuesMilestoned.MilestonePayload.StatePayload,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String
                 ) {
                     self.closedAt = closedAt
@@ -29579,13 +29577,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/events_url`.
@@ -29666,11 +29664,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/creator/avatar_url`.
@@ -29819,7 +29817,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/id`.
@@ -29850,7 +29848,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -29873,12 +29871,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssuesOpened.ChangesPayload.OldIssuePayload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -29887,7 +29885,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssuesOpened.ChangesPayload.OldIssuePayload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -29939,7 +29937,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/performed_via_github_app/EventsPayload`.
@@ -30564,7 +30562,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -30581,7 +30579,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssuesOpened.ChangesPayload.OldIssuePayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -30592,7 +30590,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssuesOpened.ChangesPayload.OldIssuePayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssuesOpened.ChangesPayload.OldIssuePayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -30633,7 +30631,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/pull_request/url`.
@@ -30649,7 +30647,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -30764,7 +30762,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_issue/url`.
@@ -30953,10 +30951,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssuesOpened.ChangesPayload.OldIssuePayload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssuesOpened.ChangesPayload.OldIssuePayload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -30975,7 +30973,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssuesOpened.ChangesPayload.OldIssuePayload.UserPayload? = nil
                     ) {
@@ -31104,7 +31102,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_repository/created_at/case1`.
                         case case1(Swift.Int)
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_repository/created_at/case2`.
-                        case case2(Foundation.Date)
+                        case case2(Swift.String)
                         public init(from decoder: any Decoder) throws {
                             var errors: [any Error] = []
                             do {
@@ -31484,7 +31482,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_repository/pushed_at/case1`.
                         case case1(Swift.Int)
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_repository/pushed_at/case2`.
-                        case case2(Foundation.Date)
+                        case case2(Swift.String)
                         public init(from decoder: any Decoder) throws {
                             var errors: [any Error] = []
                             do {
@@ -31547,7 +31545,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_repository/trees_url`.
                     public var treesUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_repository/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_repository/url`.
                     public var url: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/changes/old_repository/visibility`.
@@ -31739,7 +31737,7 @@ public enum Components {
                         teamsUrl: Swift.String,
                         topics: [Swift.String],
                         treesUrl: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         visibility: Components.Schemas.WebhookIssuesOpened.ChangesPayload.OldRepositoryPayload.VisibilityPayload,
                         watchers: Swift.Int,
@@ -32284,13 +32282,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/events_url`.
@@ -32371,11 +32369,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/creator/avatar_url`.
@@ -32525,7 +32523,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/id`.
@@ -32556,7 +32554,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -32579,12 +32577,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssuesOpened.IssuePayload.Value1Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -32593,7 +32591,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssuesOpened.IssuePayload.Value1Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -32645,7 +32643,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/performed_via_github_app/EventsPayload`.
@@ -33274,7 +33272,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -33291,7 +33289,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssuesOpened.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -33302,7 +33300,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssuesOpened.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssuesOpened.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -33343,7 +33341,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/pull_request/url`.
@@ -33359,7 +33357,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -33474,7 +33472,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-opened/issue/value1/url`.
@@ -33663,10 +33661,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssuesOpened.IssuePayload.Value1Payload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssuesOpened.IssuePayload.Value1Payload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -33685,7 +33683,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssuesOpened.IssuePayload.Value1Payload.UserPayload? = nil
                     ) {
@@ -34537,13 +34535,13 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/closed_at`.
-                public var closedAt: Foundation.Date?
+                public var closedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/comments_url`.
                 public var commentsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/draft`.
                 public var draft: Swift.Bool?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/events_url`.
@@ -34624,11 +34622,11 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone`.
                 public struct MilestonePayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/closed_issues`.
                     public var closedIssues: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/creator`.
                     public struct CreatorPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/creator/avatar_url`.
@@ -34777,7 +34775,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/due_on`.
-                    public var dueOn: Foundation.Date?
+                    public var dueOn: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/id`.
@@ -34808,7 +34806,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/milestone/url`.
                     public var url: Swift.String
                     /// Creates a new `MilestonePayload`.
@@ -34831,12 +34829,12 @@ public enum Components {
                     ///   - updatedAt:
                     ///   - url:
                     public init(
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         closedIssues: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         creator: Components.Schemas.WebhookIssuesPinned.IssuePayload.MilestonePayload.CreatorPayload? = nil,
                         description: Swift.String? = nil,
-                        dueOn: Foundation.Date? = nil,
+                        dueOn: Swift.String? = nil,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         labelsUrl: Swift.String,
@@ -34845,7 +34843,7 @@ public enum Components {
                         openIssues: Swift.Int,
                         state: Components.Schemas.WebhookIssuesPinned.IssuePayload.MilestonePayload.StatePayload,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String
                     ) {
                         self.closedAt = closedAt
@@ -34897,7 +34895,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/performed_via_github_app/EventsPayload`.
@@ -35522,7 +35520,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -35539,7 +35537,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookIssuesPinned.IssuePayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -35550,7 +35548,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookIssuesPinned.IssuePayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookIssuesPinned.IssuePayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -35591,7 +35589,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/pull_request/html_url`.
                     public var htmlUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/pull_request/merged_at`.
-                    public var mergedAt: Foundation.Date?
+                    public var mergedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/pull_request/patch_url`.
                     public var patchUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/pull_request/url`.
@@ -35607,7 +35605,7 @@ public enum Components {
                     public init(
                         diffUrl: Swift.String? = nil,
                         htmlUrl: Swift.String? = nil,
-                        mergedAt: Foundation.Date? = nil,
+                        mergedAt: Swift.String? = nil,
                         patchUrl: Swift.String? = nil,
                         url: Swift.String? = nil
                     ) {
@@ -35722,7 +35720,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-pinned/issue/url`.
@@ -35911,10 +35909,10 @@ public enum Components {
                     assignees: Components.Schemas.WebhookIssuesPinned.IssuePayload.AssigneesPayload,
                     authorAssociation: Components.Schemas.WebhookIssuesPinned.IssuePayload.AuthorAssociationPayload,
                     body: Swift.String? = nil,
-                    closedAt: Foundation.Date? = nil,
+                    closedAt: Swift.String? = nil,
                     comments: Swift.Int,
                     commentsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     draft: Swift.Bool? = nil,
                     eventsUrl: Swift.String,
                     htmlUrl: Swift.String,
@@ -35933,7 +35931,7 @@ public enum Components {
                     stateReason: Swift.String? = nil,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssuesPinned.IssuePayload.UserPayload? = nil
                 ) {
@@ -36391,13 +36389,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/events_url`.
@@ -36478,11 +36476,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/creator/avatar_url`.
@@ -36632,7 +36630,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/id`.
@@ -36663,7 +36661,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -36686,12 +36684,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssuesReopened.IssuePayload.Value1Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -36700,7 +36698,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssuesReopened.IssuePayload.Value1Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -36752,7 +36750,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/performed_via_github_app/EventsPayload`.
@@ -37381,7 +37379,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -37398,7 +37396,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssuesReopened.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -37409,7 +37407,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssuesReopened.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssuesReopened.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -37450,7 +37448,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/pull_request/url`.
@@ -37466,7 +37464,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -37581,7 +37579,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-reopened/issue/value1/url`.
@@ -37771,10 +37769,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssuesReopened.IssuePayload.Value1Payload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssuesReopened.IssuePayload.Value1Payload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -37793,7 +37791,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssuesReopened.IssuePayload.Value1Payload.UserPayload? = nil
                     ) {
@@ -38639,13 +38637,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/events_url`.
@@ -38726,11 +38724,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/creator/avatar_url`.
@@ -38879,7 +38877,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/id`.
@@ -38910,7 +38908,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -38933,12 +38931,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssuesTransferred.ChangesPayload.NewIssuePayload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -38947,7 +38945,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssuesTransferred.ChangesPayload.NewIssuePayload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -38999,7 +38997,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/performed_via_github_app/EventsPayload`.
@@ -39624,7 +39622,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -39641,7 +39639,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssuesTransferred.ChangesPayload.NewIssuePayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -39652,7 +39650,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssuesTransferred.ChangesPayload.NewIssuePayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssuesTransferred.ChangesPayload.NewIssuePayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -39693,7 +39691,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/pull_request/url`.
@@ -39709,7 +39707,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -39824,7 +39822,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_issue/url`.
@@ -40013,10 +40011,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssuesTransferred.ChangesPayload.NewIssuePayload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssuesTransferred.ChangesPayload.NewIssuePayload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -40035,7 +40033,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssuesTransferred.ChangesPayload.NewIssuePayload.UserPayload? = nil
                     ) {
@@ -40164,7 +40162,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_repository/created_at/case1`.
                         case case1(Swift.Int)
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_repository/created_at/case2`.
-                        case case2(Foundation.Date)
+                        case case2(Swift.String)
                         public init(from decoder: any Decoder) throws {
                             var errors: [any Error] = []
                             do {
@@ -40544,7 +40542,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_repository/pushed_at/case1`.
                         case case1(Swift.Int)
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_repository/pushed_at/case2`.
-                        case case2(Foundation.Date)
+                        case case2(Swift.String)
                         public init(from decoder: any Decoder) throws {
                             var errors: [any Error] = []
                             do {
@@ -40607,7 +40605,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_repository/trees_url`.
                     public var treesUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_repository/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_repository/url`.
                     public var url: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/changes/new_repository/visibility`.
@@ -40804,7 +40802,7 @@ public enum Components {
                         teamsUrl: Swift.String,
                         topics: [Swift.String],
                         treesUrl: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         visibility: Components.Schemas.WebhookIssuesTransferred.ChangesPayload.NewRepositoryPayload.VisibilityPayload,
                         watchers: Swift.Int,
@@ -41350,13 +41348,13 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/closed_at`.
-                public var closedAt: Foundation.Date?
+                public var closedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/comments_url`.
                 public var commentsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/draft`.
                 public var draft: Swift.Bool?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/events_url`.
@@ -41437,11 +41435,11 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone`.
                 public struct MilestonePayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/closed_issues`.
                     public var closedIssues: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/creator`.
                     public struct CreatorPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/creator/avatar_url`.
@@ -41590,7 +41588,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/due_on`.
-                    public var dueOn: Foundation.Date?
+                    public var dueOn: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/id`.
@@ -41621,7 +41619,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/milestone/url`.
                     public var url: Swift.String
                     /// Creates a new `MilestonePayload`.
@@ -41644,12 +41642,12 @@ public enum Components {
                     ///   - updatedAt:
                     ///   - url:
                     public init(
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         closedIssues: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         creator: Components.Schemas.WebhookIssuesTransferred.IssuePayload.MilestonePayload.CreatorPayload? = nil,
                         description: Swift.String? = nil,
-                        dueOn: Foundation.Date? = nil,
+                        dueOn: Swift.String? = nil,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         labelsUrl: Swift.String,
@@ -41658,7 +41656,7 @@ public enum Components {
                         openIssues: Swift.Int,
                         state: Components.Schemas.WebhookIssuesTransferred.IssuePayload.MilestonePayload.StatePayload,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String
                     ) {
                         self.closedAt = closedAt
@@ -41710,7 +41708,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/performed_via_github_app/EventsPayload`.
@@ -42335,7 +42333,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -42352,7 +42350,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookIssuesTransferred.IssuePayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -42363,7 +42361,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookIssuesTransferred.IssuePayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookIssuesTransferred.IssuePayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -42404,7 +42402,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/pull_request/html_url`.
                     public var htmlUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/pull_request/merged_at`.
-                    public var mergedAt: Foundation.Date?
+                    public var mergedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/pull_request/patch_url`.
                     public var patchUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/pull_request/url`.
@@ -42420,7 +42418,7 @@ public enum Components {
                     public init(
                         diffUrl: Swift.String? = nil,
                         htmlUrl: Swift.String? = nil,
-                        mergedAt: Foundation.Date? = nil,
+                        mergedAt: Swift.String? = nil,
                         patchUrl: Swift.String? = nil,
                         url: Swift.String? = nil
                     ) {
@@ -42535,7 +42533,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-transferred/issue/url`.
@@ -42724,10 +42722,10 @@ public enum Components {
                     assignees: Components.Schemas.WebhookIssuesTransferred.IssuePayload.AssigneesPayload,
                     authorAssociation: Components.Schemas.WebhookIssuesTransferred.IssuePayload.AuthorAssociationPayload,
                     body: Swift.String? = nil,
-                    closedAt: Foundation.Date? = nil,
+                    closedAt: Swift.String? = nil,
                     comments: Swift.Int,
                     commentsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     draft: Swift.Bool? = nil,
                     eventsUrl: Swift.String,
                     htmlUrl: Swift.String,
@@ -42746,7 +42744,7 @@ public enum Components {
                     stateReason: Swift.String? = nil,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssuesTransferred.IssuePayload.UserPayload? = nil
                 ) {
@@ -43357,13 +43355,13 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/closed_at`.
-                public var closedAt: Foundation.Date?
+                public var closedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/comments_url`.
                 public var commentsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/draft`.
                 public var draft: Swift.Bool?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/events_url`.
@@ -43444,11 +43442,11 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone`.
                 public struct MilestonePayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/closed_issues`.
                     public var closedIssues: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/creator`.
                     public struct CreatorPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/creator/avatar_url`.
@@ -43598,7 +43596,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/due_on`.
-                    public var dueOn: Foundation.Date?
+                    public var dueOn: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/id`.
@@ -43629,7 +43627,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/milestone/url`.
                     public var url: Swift.String
                     /// Creates a new `MilestonePayload`.
@@ -43652,12 +43650,12 @@ public enum Components {
                     ///   - updatedAt:
                     ///   - url:
                     public init(
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         closedIssues: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         creator: Components.Schemas.WebhookIssuesUnassigned.IssuePayload.MilestonePayload.CreatorPayload? = nil,
                         description: Swift.String? = nil,
-                        dueOn: Foundation.Date? = nil,
+                        dueOn: Swift.String? = nil,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         labelsUrl: Swift.String,
@@ -43666,7 +43664,7 @@ public enum Components {
                         openIssues: Swift.Int,
                         state: Components.Schemas.WebhookIssuesUnassigned.IssuePayload.MilestonePayload.StatePayload,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String
                     ) {
                         self.closedAt = closedAt
@@ -43718,7 +43716,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/performed_via_github_app/EventsPayload`.
@@ -44346,7 +44344,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -44363,7 +44361,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookIssuesUnassigned.IssuePayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -44374,7 +44372,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookIssuesUnassigned.IssuePayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookIssuesUnassigned.IssuePayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -44415,7 +44413,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/pull_request/html_url`.
                     public var htmlUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/pull_request/merged_at`.
-                    public var mergedAt: Foundation.Date?
+                    public var mergedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/pull_request/patch_url`.
                     public var patchUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/pull_request/url`.
@@ -44431,7 +44429,7 @@ public enum Components {
                     public init(
                         diffUrl: Swift.String? = nil,
                         htmlUrl: Swift.String? = nil,
-                        mergedAt: Foundation.Date? = nil,
+                        mergedAt: Swift.String? = nil,
                         patchUrl: Swift.String? = nil,
                         url: Swift.String? = nil
                     ) {
@@ -44546,7 +44544,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unassigned/issue/url`.
@@ -44736,10 +44734,10 @@ public enum Components {
                     assignees: Components.Schemas.WebhookIssuesUnassigned.IssuePayload.AssigneesPayload,
                     authorAssociation: Components.Schemas.WebhookIssuesUnassigned.IssuePayload.AuthorAssociationPayload,
                     body: Swift.String? = nil,
-                    closedAt: Foundation.Date? = nil,
+                    closedAt: Swift.String? = nil,
                     comments: Swift.Int,
                     commentsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     draft: Swift.Bool? = nil,
                     eventsUrl: Swift.String,
                     htmlUrl: Swift.String,
@@ -44758,7 +44756,7 @@ public enum Components {
                     stateReason: Swift.String? = nil,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssuesUnassigned.IssuePayload.UserPayload? = nil
                 ) {
@@ -45219,13 +45217,13 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/closed_at`.
-                public var closedAt: Foundation.Date?
+                public var closedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/comments_url`.
                 public var commentsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/draft`.
                 public var draft: Swift.Bool?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/events_url`.
@@ -45306,11 +45304,11 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone`.
                 public struct MilestonePayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/closed_issues`.
                     public var closedIssues: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/creator`.
                     public struct CreatorPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/creator/avatar_url`.
@@ -45460,7 +45458,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/due_on`.
-                    public var dueOn: Foundation.Date?
+                    public var dueOn: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/id`.
@@ -45491,7 +45489,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/milestone/url`.
                     public var url: Swift.String
                     /// Creates a new `MilestonePayload`.
@@ -45514,12 +45512,12 @@ public enum Components {
                     ///   - updatedAt:
                     ///   - url:
                     public init(
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         closedIssues: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         creator: Components.Schemas.WebhookIssuesUnlabeled.IssuePayload.MilestonePayload.CreatorPayload? = nil,
                         description: Swift.String? = nil,
-                        dueOn: Foundation.Date? = nil,
+                        dueOn: Swift.String? = nil,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         labelsUrl: Swift.String,
@@ -45528,7 +45526,7 @@ public enum Components {
                         openIssues: Swift.Int,
                         state: Components.Schemas.WebhookIssuesUnlabeled.IssuePayload.MilestonePayload.StatePayload,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String
                     ) {
                         self.closedAt = closedAt
@@ -45580,7 +45578,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/performed_via_github_app/EventsPayload`.
@@ -46208,7 +46206,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -46225,7 +46223,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookIssuesUnlabeled.IssuePayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -46236,7 +46234,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookIssuesUnlabeled.IssuePayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookIssuesUnlabeled.IssuePayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -46277,7 +46275,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/pull_request/html_url`.
                     public var htmlUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/pull_request/merged_at`.
-                    public var mergedAt: Foundation.Date?
+                    public var mergedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/pull_request/patch_url`.
                     public var patchUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/pull_request/url`.
@@ -46293,7 +46291,7 @@ public enum Components {
                     public init(
                         diffUrl: Swift.String? = nil,
                         htmlUrl: Swift.String? = nil,
-                        mergedAt: Foundation.Date? = nil,
+                        mergedAt: Swift.String? = nil,
                         patchUrl: Swift.String? = nil,
                         url: Swift.String? = nil
                     ) {
@@ -46408,7 +46406,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unlabeled/issue/url`.
@@ -46598,10 +46596,10 @@ public enum Components {
                     assignees: Components.Schemas.WebhookIssuesUnlabeled.IssuePayload.AssigneesPayload,
                     authorAssociation: Components.Schemas.WebhookIssuesUnlabeled.IssuePayload.AuthorAssociationPayload,
                     body: Swift.String? = nil,
-                    closedAt: Foundation.Date? = nil,
+                    closedAt: Swift.String? = nil,
                     comments: Swift.Int,
                     commentsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     draft: Swift.Bool? = nil,
                     eventsUrl: Swift.String,
                     htmlUrl: Swift.String,
@@ -46620,7 +46618,7 @@ public enum Components {
                     stateReason: Swift.String? = nil,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssuesUnlabeled.IssuePayload.UserPayload? = nil
                 ) {
@@ -47142,13 +47140,13 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/comments_url`.
                     public var commentsUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/draft`.
                     public var draft: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/events_url`.
@@ -47229,11 +47227,11 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone`.
                     public struct MilestonePayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/closed_at`.
-                        public var closedAt: Foundation.Date?
+                        public var closedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/closed_issues`.
                         public var closedIssues: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/creator`.
                         public struct CreatorPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/creator/avatar_url`.
@@ -47382,7 +47380,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/due_on`.
-                        public var dueOn: Foundation.Date?
+                        public var dueOn: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/html_url`.
                         public var htmlUrl: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/id`.
@@ -47413,7 +47411,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/title`.
                         public var title: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/milestone/url`.
                         public var url: Swift.String
                         /// Creates a new `MilestonePayload`.
@@ -47436,12 +47434,12 @@ public enum Components {
                         ///   - updatedAt:
                         ///   - url:
                         public init(
-                            closedAt: Foundation.Date? = nil,
+                            closedAt: Swift.String? = nil,
                             closedIssues: Swift.Int,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             creator: Components.Schemas.WebhookIssuesUnlocked.IssuePayload.Value1Payload.MilestonePayload.CreatorPayload? = nil,
                             description: Swift.String? = nil,
-                            dueOn: Foundation.Date? = nil,
+                            dueOn: Swift.String? = nil,
                             htmlUrl: Swift.String,
                             id: Swift.Int,
                             labelsUrl: Swift.String,
@@ -47450,7 +47448,7 @@ public enum Components {
                             openIssues: Swift.Int,
                             state: Components.Schemas.WebhookIssuesUnlocked.IssuePayload.Value1Payload.MilestonePayload.StatePayload,
                             title: Swift.String,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             url: Swift.String
                         ) {
                             self.closedAt = closedAt
@@ -47502,7 +47500,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/performed_via_github_app`.
                     public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/performed_via_github_app/created_at`.
-                        public var createdAt: Foundation.Date?
+                        public var createdAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/performed_via_github_app/description`.
                         public var description: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/performed_via_github_app/EventsPayload`.
@@ -48127,7 +48125,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/performed_via_github_app/slug`.
                         public var slug: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/performed_via_github_app/updated_at`.
-                        public var updatedAt: Foundation.Date?
+                        public var updatedAt: Swift.String?
                         /// Creates a new `PerformedViaGithubAppPayload`.
                         ///
                         /// - Parameters:
@@ -48144,7 +48142,7 @@ public enum Components {
                         ///   - slug: The slug name of the GitHub app
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date? = nil,
+                            createdAt: Swift.String? = nil,
                             description: Swift.String? = nil,
                             events: Components.Schemas.WebhookIssuesUnlocked.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                             externalUrl: Swift.String? = nil,
@@ -48155,7 +48153,7 @@ public enum Components {
                             owner: Components.Schemas.WebhookIssuesUnlocked.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                             permissions: Components.Schemas.WebhookIssuesUnlocked.IssuePayload.Value1Payload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                             slug: Swift.String? = nil,
-                            updatedAt: Foundation.Date? = nil
+                            updatedAt: Swift.String? = nil
                         ) {
                             self.createdAt = createdAt
                             self.description = description
@@ -48196,7 +48194,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/pull_request/html_url`.
                         public var htmlUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/pull_request/merged_at`.
-                        public var mergedAt: Foundation.Date?
+                        public var mergedAt: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/pull_request/patch_url`.
                         public var patchUrl: Swift.String?
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/pull_request/url`.
@@ -48212,7 +48210,7 @@ public enum Components {
                         public init(
                             diffUrl: Swift.String? = nil,
                             htmlUrl: Swift.String? = nil,
-                            mergedAt: Foundation.Date? = nil,
+                            mergedAt: Swift.String? = nil,
                             patchUrl: Swift.String? = nil,
                             url: Swift.String? = nil
                         ) {
@@ -48327,7 +48325,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// URL for the issue
                     ///
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unlocked/issue/value1/url`.
@@ -48516,10 +48514,10 @@ public enum Components {
                         assignees: Components.Schemas.WebhookIssuesUnlocked.IssuePayload.Value1Payload.AssigneesPayload,
                         authorAssociation: Components.Schemas.WebhookIssuesUnlocked.IssuePayload.Value1Payload.AuthorAssociationPayload,
                         body: Swift.String? = nil,
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         comments: Swift.Int,
                         commentsUrl: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         draft: Swift.Bool? = nil,
                         eventsUrl: Swift.String,
                         htmlUrl: Swift.String,
@@ -48538,7 +48536,7 @@ public enum Components {
                         stateReason: Swift.String? = nil,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         user: Components.Schemas.WebhookIssuesUnlocked.IssuePayload.Value1Payload.UserPayload? = nil
                     ) {
@@ -49381,13 +49379,13 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/closed_at`.
-                public var closedAt: Foundation.Date?
+                public var closedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/comments_url`.
                 public var commentsUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/draft`.
                 public var draft: Swift.Bool?
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/events_url`.
@@ -49468,11 +49466,11 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone`.
                 public struct MilestonePayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/closed_at`.
-                    public var closedAt: Foundation.Date?
+                    public var closedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/closed_issues`.
                     public var closedIssues: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/creator`.
                     public struct CreatorPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/creator/avatar_url`.
@@ -49621,7 +49619,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/due_on`.
-                    public var dueOn: Foundation.Date?
+                    public var dueOn: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/id`.
@@ -49652,7 +49650,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/milestone/url`.
                     public var url: Swift.String
                     /// Creates a new `MilestonePayload`.
@@ -49675,12 +49673,12 @@ public enum Components {
                     ///   - updatedAt:
                     ///   - url:
                     public init(
-                        closedAt: Foundation.Date? = nil,
+                        closedAt: Swift.String? = nil,
                         closedIssues: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         creator: Components.Schemas.WebhookIssuesUnpinned.IssuePayload.MilestonePayload.CreatorPayload? = nil,
                         description: Swift.String? = nil,
-                        dueOn: Foundation.Date? = nil,
+                        dueOn: Swift.String? = nil,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         labelsUrl: Swift.String,
@@ -49689,7 +49687,7 @@ public enum Components {
                         openIssues: Swift.Int,
                         state: Components.Schemas.WebhookIssuesUnpinned.IssuePayload.MilestonePayload.StatePayload,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String
                     ) {
                         self.closedAt = closedAt
@@ -49741,7 +49739,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/performed_via_github_app`.
                 public struct PerformedViaGithubAppPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/performed_via_github_app/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/performed_via_github_app/description`.
                     public var description: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/performed_via_github_app/EventsPayload`.
@@ -50366,7 +50364,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/performed_via_github_app/slug`.
                     public var slug: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/performed_via_github_app/updated_at`.
-                    public var updatedAt: Foundation.Date?
+                    public var updatedAt: Swift.String?
                     /// Creates a new `PerformedViaGithubAppPayload`.
                     ///
                     /// - Parameters:
@@ -50383,7 +50381,7 @@ public enum Components {
                     ///   - slug: The slug name of the GitHub app
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         description: Swift.String? = nil,
                         events: Components.Schemas.WebhookIssuesUnpinned.IssuePayload.PerformedViaGithubAppPayload.EventsPayload? = nil,
                         externalUrl: Swift.String? = nil,
@@ -50394,7 +50392,7 @@ public enum Components {
                         owner: Components.Schemas.WebhookIssuesUnpinned.IssuePayload.PerformedViaGithubAppPayload.OwnerPayload? = nil,
                         permissions: Components.Schemas.WebhookIssuesUnpinned.IssuePayload.PerformedViaGithubAppPayload.PermissionsPayload? = nil,
                         slug: Swift.String? = nil,
-                        updatedAt: Foundation.Date? = nil
+                        updatedAt: Swift.String? = nil
                     ) {
                         self.createdAt = createdAt
                         self.description = description
@@ -50435,7 +50433,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/pull_request/html_url`.
                     public var htmlUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/pull_request/merged_at`.
-                    public var mergedAt: Foundation.Date?
+                    public var mergedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/pull_request/patch_url`.
                     public var patchUrl: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/pull_request/url`.
@@ -50451,7 +50449,7 @@ public enum Components {
                     public init(
                         diffUrl: Swift.String? = nil,
                         htmlUrl: Swift.String? = nil,
-                        mergedAt: Foundation.Date? = nil,
+                        mergedAt: Swift.String? = nil,
                         patchUrl: Swift.String? = nil,
                         url: Swift.String? = nil
                     ) {
@@ -50566,7 +50564,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// URL for the issue
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-issues-unpinned/issue/url`.
@@ -50755,10 +50753,10 @@ public enum Components {
                     assignees: Components.Schemas.WebhookIssuesUnpinned.IssuePayload.AssigneesPayload,
                     authorAssociation: Components.Schemas.WebhookIssuesUnpinned.IssuePayload.AuthorAssociationPayload,
                     body: Swift.String? = nil,
-                    closedAt: Foundation.Date? = nil,
+                    closedAt: Swift.String? = nil,
                     comments: Swift.Int,
                     commentsUrl: Swift.String,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     draft: Swift.Bool? = nil,
                     eventsUrl: Swift.String,
                     htmlUrl: Swift.String,
@@ -50777,7 +50775,7 @@ public enum Components {
                     stateReason: Swift.String? = nil,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     user: Components.Schemas.WebhookIssuesUnpinned.IssuePayload.UserPayload? = nil
                 ) {

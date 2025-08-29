@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -517,9 +515,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -543,8 +541,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -838,11 +836,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -1908,9 +1906,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2226,11 +2224,11 @@ public enum Components {
         /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         ///
         /// - Remark: Generated from `#/components/schemas/alert-created-at`.
-        public typealias AlertCreatedAt = Foundation.Date
+        public typealias AlertCreatedAt = Swift.String
         /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         ///
         /// - Remark: Generated from `#/components/schemas/alert-updated-at`.
-        public typealias AlertUpdatedAt = Foundation.Date
+        public typealias AlertUpdatedAt = Swift.String
         /// The REST API URL of the alert resource.
         ///
         /// - Remark: Generated from `#/components/schemas/alert-url`.
@@ -2279,7 +2277,7 @@ public enum Components {
             /// The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
             ///
             /// - Remark: Generated from `#/components/schemas/secret-scanning-alert/resolved_at`.
-            public var resolvedAt: Foundation.Date?
+            public var resolvedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/secret-scanning-alert/resolved_by`.
             public var resolvedBy: Components.Schemas.NullableSimpleUser?
             /// An optional comment to resolve an alert.
@@ -2308,7 +2306,7 @@ public enum Components {
             /// The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
             ///
             /// - Remark: Generated from `#/components/schemas/secret-scanning-alert/push_protection_bypassed_at`.
-            public var pushProtectionBypassedAt: Foundation.Date?
+            public var pushProtectionBypassedAt: Swift.String?
             /// Creates a new `SecretScanningAlert`.
             ///
             /// - Parameters:
@@ -2338,7 +2336,7 @@ public enum Components {
                 locationsUrl: Swift.String? = nil,
                 state: Components.Schemas.SecretScanningAlertState? = nil,
                 resolution: Components.Schemas.SecretScanningAlertResolution? = nil,
-                resolvedAt: Foundation.Date? = nil,
+                resolvedAt: Swift.String? = nil,
                 resolvedBy: Components.Schemas.NullableSimpleUser? = nil,
                 resolutionComment: Swift.String? = nil,
                 secretType: Swift.String? = nil,
@@ -2346,7 +2344,7 @@ public enum Components {
                 secret: Swift.String? = nil,
                 pushProtectionBypassed: Swift.Bool? = nil,
                 pushProtectionBypassedBy: Components.Schemas.NullableSimpleUser? = nil,
-                pushProtectionBypassedAt: Foundation.Date? = nil
+                pushProtectionBypassedAt: Swift.String? = nil
             ) {
                 self.number = number
                 self.createdAt = createdAt
@@ -2771,7 +2769,7 @@ public enum Components {
                 /// The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-secret-scanning-alert-resolved/alert/push_protection_bypassed_at`.
-                public var pushProtectionBypassedAt: Foundation.Date?
+                public var pushProtectionBypassedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-secret-scanning-alert-resolved/alert/push_protection_bypassed_by`.
                 public var pushProtectionBypassedBy: Components.Schemas.NullableSimpleUser?
                 /// **Required when the `state` is `resolved`.** The reason for resolving the alert.
@@ -2793,7 +2791,7 @@ public enum Components {
                 /// The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
                 ///
                 /// - Remark: Generated from `#/components/schemas/webhook-secret-scanning-alert-resolved/alert/resolved_at`.
-                public var resolvedAt: Foundation.Date?
+                public var resolvedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-secret-scanning-alert-resolved/alert/resolved_by`.
                 public var resolvedBy: Components.Schemas.NullableSimpleUser?
                 /// An optional comment to resolve an alert.
@@ -2845,10 +2843,10 @@ public enum Components {
                     locationsUrl: Swift.String? = nil,
                     number: Components.Schemas.AlertNumber? = nil,
                     pushProtectionBypassed: Swift.Bool? = nil,
-                    pushProtectionBypassedAt: Foundation.Date? = nil,
+                    pushProtectionBypassedAt: Swift.String? = nil,
                     pushProtectionBypassedBy: Components.Schemas.NullableSimpleUser? = nil,
                     resolution: Components.Schemas.WebhookSecretScanningAlertResolved.AlertPayload.ResolutionPayload? = nil,
-                    resolvedAt: Foundation.Date? = nil,
+                    resolvedAt: Swift.String? = nil,
                     resolvedBy: Components.Schemas.NullableSimpleUser? = nil,
                     resolutionComment: Swift.String? = nil,
                     secret: Swift.String? = nil,

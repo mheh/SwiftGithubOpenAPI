@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -827,9 +825,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -853,8 +851,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -1148,11 +1146,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -2218,9 +2216,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2590,7 +2588,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/answer/child_comment_count`.
                 public var childCommentCount: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/answer/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/answer/discussion_id`.
                 public var discussionId: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/answer/html_url`.
@@ -2677,7 +2675,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/answer/repository_url`.
                 public var repositoryUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/answer/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/answer/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/answer/user/avatar_url`.
@@ -2843,7 +2841,7 @@ public enum Components {
                     authorAssociation: Components.Schemas.WebhookDiscussionAnswered.AnswerPayload.AuthorAssociationPayload,
                     body: Swift.String,
                     childCommentCount: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     discussionId: Swift.Int,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
@@ -2851,7 +2849,7 @@ public enum Components {
                     parentId: OpenAPIRuntime.OpenAPIValueContainer? = nil,
                     reactions: Components.Schemas.WebhookDiscussionAnswered.AnswerPayload.ReactionsPayload? = nil,
                     repositoryUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionAnswered.AnswerPayload.UserPayload? = nil
                 ) {
                     self.authorAssociation = authorAssociation
@@ -3063,7 +3061,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/category`.
                     public struct CategoryPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/category/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/category/description`.
                         public var description: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/category/emoji`.
@@ -3096,7 +3094,7 @@ public enum Components {
                         ///   - slug:
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             description: Swift.String,
                             emoji: Swift.String,
                             id: Swift.Int,
@@ -3136,7 +3134,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/id`.
@@ -3236,7 +3234,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/user`.
                     public struct UserPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value1/user/avatar_url`.
@@ -3415,7 +3413,7 @@ public enum Components {
                         body: Swift.String,
                         category: Components.Schemas.WebhookDiscussionAnswered.DiscussionPayload.Value1Payload.CategoryPayload,
                         comments: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         locked: Swift.Bool,
@@ -3426,7 +3424,7 @@ public enum Components {
                         state: Components.Schemas.WebhookDiscussionAnswered.DiscussionPayload.Value1Payload.StatePayload,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         user: Components.Schemas.WebhookDiscussionAnswered.DiscussionPayload.Value1Payload.UserPayload? = nil
                     ) {
                         self.activeLockReason = activeLockReason
@@ -3482,7 +3480,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value2/active_lock_reason`.
                     public var activeLockReason: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value2/answer_chosen_at`.
-                    public var answerChosenAt: Foundation.Date
+                    public var answerChosenAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value2/answer_chosen_by`.
                     public struct AnswerChosenByPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-answered/discussion/value2/answer_chosen_by/avatar_url`.
@@ -3951,7 +3949,7 @@ public enum Components {
                     ///   - user:
                     public init(
                         activeLockReason: Swift.String? = nil,
-                        answerChosenAt: Foundation.Date,
+                        answerChosenAt: Swift.String,
                         answerChosenBy: Components.Schemas.WebhookDiscussionAnswered.DiscussionPayload.Value2Payload.AnswerChosenByPayload? = nil,
                         answerHtmlUrl: Swift.String,
                         authorAssociation: Swift.String? = nil,
@@ -4109,7 +4107,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/changes/category/from`.
                     public struct FromPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/changes/category/from/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/changes/category/from/description`.
                         public var description: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/changes/category/from/emoji`.
@@ -4142,7 +4140,7 @@ public enum Components {
                         ///   - slug:
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             description: Swift.String,
                             emoji: Swift.String,
                             id: Swift.Int,
@@ -4380,7 +4378,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/category`.
                 public struct CategoryPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/category/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/category/description`.
                     public var description: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/category/emoji`.
@@ -4413,7 +4411,7 @@ public enum Components {
                     ///   - slug:
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         description: Swift.String,
                         emoji: Swift.String,
                         id: Swift.Int,
@@ -4453,7 +4451,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/id`.
@@ -4553,7 +4551,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-category-changed/discussion/user/avatar_url`.
@@ -4732,7 +4730,7 @@ public enum Components {
                     body: Swift.String,
                     category: Components.Schemas.WebhookDiscussionCategoryChanged.DiscussionPayload.CategoryPayload,
                     comments: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     locked: Swift.Bool,
@@ -4743,7 +4741,7 @@ public enum Components {
                     state: Components.Schemas.WebhookDiscussionCategoryChanged.DiscussionPayload.StatePayload,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionCategoryChanged.DiscussionPayload.UserPayload? = nil
                 ) {
                     self.activeLockReason = activeLockReason
@@ -5348,7 +5346,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/category`.
                 public struct CategoryPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/category/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/category/description`.
                     public var description: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/category/emoji`.
@@ -5381,7 +5379,7 @@ public enum Components {
                     ///   - slug:
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         description: Swift.String,
                         emoji: Swift.String,
                         id: Swift.Int,
@@ -5421,7 +5419,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/id`.
@@ -5521,7 +5519,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-created/discussion/user/avatar_url`.
@@ -5700,7 +5698,7 @@ public enum Components {
                     body: Swift.String? = nil,
                     category: Components.Schemas.WebhookDiscussionCommentCreated.DiscussionPayload.CategoryPayload,
                     comments: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     locked: Swift.Bool,
@@ -5711,7 +5709,7 @@ public enum Components {
                     state: Components.Schemas.WebhookDiscussionCommentCreated.DiscussionPayload.StatePayload,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionCommentCreated.DiscussionPayload.UserPayload? = nil
                 ) {
                     self.activeLockReason = activeLockReason
@@ -6316,7 +6314,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/category`.
                 public struct CategoryPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/category/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/category/description`.
                     public var description: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/category/emoji`.
@@ -6349,7 +6347,7 @@ public enum Components {
                     ///   - slug:
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         description: Swift.String,
                         emoji: Swift.String,
                         id: Swift.Int,
@@ -6389,7 +6387,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/id`.
@@ -6489,7 +6487,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-deleted/discussion/user/avatar_url`.
@@ -6668,7 +6666,7 @@ public enum Components {
                     body: Swift.String,
                     category: Components.Schemas.WebhookDiscussionCommentDeleted.DiscussionPayload.CategoryPayload,
                     comments: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     locked: Swift.Bool,
@@ -6679,7 +6677,7 @@ public enum Components {
                     state: Components.Schemas.WebhookDiscussionCommentDeleted.DiscussionPayload.StatePayload,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionCommentDeleted.DiscussionPayload.UserPayload? = nil
                 ) {
                     self.activeLockReason = activeLockReason
@@ -7316,7 +7314,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/category`.
                 public struct CategoryPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/category/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/category/description`.
                     public var description: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/category/emoji`.
@@ -7349,7 +7347,7 @@ public enum Components {
                     ///   - slug:
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         description: Swift.String,
                         emoji: Swift.String,
                         id: Swift.Int,
@@ -7389,7 +7387,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/id`.
@@ -7489,7 +7487,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-comment-edited/discussion/user/avatar_url`.
@@ -7668,7 +7666,7 @@ public enum Components {
                     body: Swift.String? = nil,
                     category: Components.Schemas.WebhookDiscussionCommentEdited.DiscussionPayload.CategoryPayload,
                     comments: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     locked: Swift.Bool,
@@ -7679,7 +7677,7 @@ public enum Components {
                     state: Components.Schemas.WebhookDiscussionCommentEdited.DiscussionPayload.StatePayload,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionCommentEdited.DiscussionPayload.UserPayload? = nil
                 ) {
                     self.activeLockReason = activeLockReason
@@ -7970,7 +7968,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/category`.
                     public struct CategoryPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/category/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/category/description`.
                         public var description: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/category/emoji`.
@@ -8003,7 +8001,7 @@ public enum Components {
                         ///   - slug:
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             description: Swift.String,
                             emoji: Swift.String,
                             id: Swift.Int,
@@ -8043,7 +8041,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/id`.
@@ -8143,7 +8141,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/user`.
                     public struct UserPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-created/discussion/value1/user/avatar_url`.
@@ -8322,7 +8320,7 @@ public enum Components {
                         body: Swift.String? = nil,
                         category: Components.Schemas.WebhookDiscussionCreated.DiscussionPayload.Value1Payload.CategoryPayload,
                         comments: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         locked: Swift.Bool,
@@ -8333,7 +8331,7 @@ public enum Components {
                         state: Components.Schemas.WebhookDiscussionCreated.DiscussionPayload.Value1Payload.StatePayload,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         user: Components.Schemas.WebhookDiscussionCreated.DiscussionPayload.Value1Payload.UserPayload? = nil
                     ) {
                         self.activeLockReason = activeLockReason
@@ -9043,7 +9041,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/category`.
                 public struct CategoryPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/category/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/category/description`.
                     public var description: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/category/emoji`.
@@ -9076,7 +9074,7 @@ public enum Components {
                     ///   - slug:
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         description: Swift.String,
                         emoji: Swift.String,
                         id: Swift.Int,
@@ -9116,7 +9114,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/id`.
@@ -9216,7 +9214,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-deleted/discussion/user/avatar_url`.
@@ -9395,7 +9393,7 @@ public enum Components {
                     body: Swift.String,
                     category: Components.Schemas.WebhookDiscussionDeleted.DiscussionPayload.CategoryPayload,
                     comments: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     locked: Swift.Bool,
@@ -9406,7 +9404,7 @@ public enum Components {
                     state: Components.Schemas.WebhookDiscussionDeleted.DiscussionPayload.StatePayload,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionDeleted.DiscussionPayload.UserPayload? = nil
                 ) {
                     self.activeLockReason = activeLockReason
@@ -9742,7 +9740,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/category`.
                 public struct CategoryPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/category/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/category/description`.
                     public var description: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/category/emoji`.
@@ -9775,7 +9773,7 @@ public enum Components {
                     ///   - slug:
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         description: Swift.String,
                         emoji: Swift.String,
                         id: Swift.Int,
@@ -9815,7 +9813,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/id`.
@@ -9915,7 +9913,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-edited/discussion/user/avatar_url`.
@@ -10094,7 +10092,7 @@ public enum Components {
                     body: Swift.String,
                     category: Components.Schemas.WebhookDiscussionEdited.DiscussionPayload.CategoryPayload,
                     comments: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     locked: Swift.Bool,
@@ -10105,7 +10103,7 @@ public enum Components {
                     state: Components.Schemas.WebhookDiscussionEdited.DiscussionPayload.StatePayload,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionEdited.DiscussionPayload.UserPayload? = nil
                 ) {
                     self.activeLockReason = activeLockReason
@@ -10390,7 +10388,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/category`.
                 public struct CategoryPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/category/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/category/description`.
                     public var description: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/category/emoji`.
@@ -10423,7 +10421,7 @@ public enum Components {
                     ///   - slug:
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         description: Swift.String,
                         emoji: Swift.String,
                         id: Swift.Int,
@@ -10463,7 +10461,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/id`.
@@ -10563,7 +10561,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-labeled/discussion/user/avatar_url`.
@@ -10742,7 +10740,7 @@ public enum Components {
                     body: Swift.String? = nil,
                     category: Components.Schemas.WebhookDiscussionLabeled.DiscussionPayload.CategoryPayload,
                     comments: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     locked: Swift.Bool,
@@ -10753,7 +10751,7 @@ public enum Components {
                     state: Components.Schemas.WebhookDiscussionLabeled.DiscussionPayload.StatePayload,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionLabeled.DiscussionPayload.UserPayload? = nil
                 ) {
                     self.activeLockReason = activeLockReason
@@ -11101,7 +11099,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/category`.
                     public struct CategoryPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/category/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/category/description`.
                         public var description: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/category/emoji`.
@@ -11134,7 +11132,7 @@ public enum Components {
                         ///   - slug:
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             description: Swift.String,
                             emoji: Swift.String,
                             id: Swift.Int,
@@ -11174,7 +11172,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/id`.
@@ -11274,7 +11272,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/user`.
                     public struct UserPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-locked/discussion/value1/user/avatar_url`.
@@ -11453,7 +11451,7 @@ public enum Components {
                         body: Swift.String,
                         category: Components.Schemas.WebhookDiscussionLocked.DiscussionPayload.Value1Payload.CategoryPayload,
                         comments: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         locked: Swift.Bool,
@@ -11464,7 +11462,7 @@ public enum Components {
                         state: Components.Schemas.WebhookDiscussionLocked.DiscussionPayload.Value1Payload.StatePayload,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         user: Components.Schemas.WebhookDiscussionLocked.DiscussionPayload.Value1Payload.UserPayload? = nil
                     ) {
                         self.activeLockReason = activeLockReason
@@ -12172,7 +12170,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/category`.
                 public struct CategoryPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/category/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/category/description`.
                     public var description: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/category/emoji`.
@@ -12205,7 +12203,7 @@ public enum Components {
                     ///   - slug:
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         description: Swift.String,
                         emoji: Swift.String,
                         id: Swift.Int,
@@ -12245,7 +12243,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/id`.
@@ -12345,7 +12343,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-pinned/discussion/user/avatar_url`.
@@ -12524,7 +12522,7 @@ public enum Components {
                     body: Swift.String,
                     category: Components.Schemas.WebhookDiscussionPinned.DiscussionPayload.CategoryPayload,
                     comments: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     locked: Swift.Bool,
@@ -12535,7 +12533,7 @@ public enum Components {
                     state: Components.Schemas.WebhookDiscussionPinned.DiscussionPayload.StatePayload,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionPinned.DiscussionPayload.UserPayload? = nil
                 ) {
                     self.activeLockReason = activeLockReason
@@ -12818,7 +12816,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/category`.
                     public struct CategoryPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/category/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/category/description`.
                         public var description: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/category/emoji`.
@@ -12851,7 +12849,7 @@ public enum Components {
                         ///   - slug:
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             description: Swift.String,
                             emoji: Swift.String,
                             id: Swift.Int,
@@ -12891,7 +12889,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/id`.
@@ -12991,7 +12989,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/user`.
                     public struct UserPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_discussion/user/avatar_url`.
@@ -13170,7 +13168,7 @@ public enum Components {
                         body: Swift.String,
                         category: Components.Schemas.WebhookDiscussionTransferred.ChangesPayload.NewDiscussionPayload.CategoryPayload,
                         comments: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         locked: Swift.Bool,
@@ -13181,7 +13179,7 @@ public enum Components {
                         state: Components.Schemas.WebhookDiscussionTransferred.ChangesPayload.NewDiscussionPayload.StatePayload,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         user: Components.Schemas.WebhookDiscussionTransferred.ChangesPayload.NewDiscussionPayload.UserPayload? = nil
                     ) {
                         self.activeLockReason = activeLockReason
@@ -13289,7 +13287,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_repository/created_at/case1`.
                         case case1(Swift.Int)
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_repository/created_at/case2`.
-                        case case2(Foundation.Date)
+                        case case2(Swift.String)
                         public init(from decoder: any Decoder) throws {
                             var errors: [any Error] = []
                             do {
@@ -13669,7 +13667,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_repository/pushed_at/case1`.
                         case case1(Swift.Int)
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_repository/pushed_at/case2`.
-                        case case2(Foundation.Date)
+                        case case2(Swift.String)
                         public init(from decoder: any Decoder) throws {
                             var errors: [any Error] = []
                             do {
@@ -13732,7 +13730,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_repository/trees_url`.
                     public var treesUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_repository/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_repository/url`.
                     public var url: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/changes/new_repository/visibility`.
@@ -13929,7 +13927,7 @@ public enum Components {
                         teamsUrl: Swift.String,
                         topics: [Swift.String],
                         treesUrl: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         url: Swift.String,
                         visibility: Components.Schemas.WebhookDiscussionTransferred.ChangesPayload.NewRepositoryPayload.VisibilityPayload,
                         watchers: Swift.Int,
@@ -14318,7 +14316,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/category`.
                 public struct CategoryPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/category/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/category/description`.
                     public var description: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/category/emoji`.
@@ -14351,7 +14349,7 @@ public enum Components {
                     ///   - slug:
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         description: Swift.String,
                         emoji: Swift.String,
                         id: Swift.Int,
@@ -14391,7 +14389,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/id`.
@@ -14491,7 +14489,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-transferred/discussion/user/avatar_url`.
@@ -14670,7 +14668,7 @@ public enum Components {
                     body: Swift.String,
                     category: Components.Schemas.WebhookDiscussionTransferred.DiscussionPayload.CategoryPayload,
                     comments: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     locked: Swift.Bool,
@@ -14681,7 +14679,7 @@ public enum Components {
                     state: Components.Schemas.WebhookDiscussionTransferred.DiscussionPayload.StatePayload,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionTransferred.DiscussionPayload.UserPayload? = nil
                 ) {
                     self.activeLockReason = activeLockReason
@@ -14968,7 +14966,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/category`.
                     public struct CategoryPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/category/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/category/description`.
                         public var description: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/category/emoji`.
@@ -15001,7 +14999,7 @@ public enum Components {
                         ///   - slug:
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             description: Swift.String,
                             emoji: Swift.String,
                             id: Swift.Int,
@@ -15041,7 +15039,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/id`.
@@ -15141,7 +15139,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/user`.
                     public struct UserPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/discussion/value1/user/avatar_url`.
@@ -15320,7 +15318,7 @@ public enum Components {
                         body: Swift.String,
                         category: Components.Schemas.WebhookDiscussionUnanswered.DiscussionPayload.Value1Payload.CategoryPayload,
                         comments: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         locked: Swift.Bool,
@@ -15331,7 +15329,7 @@ public enum Components {
                         state: Components.Schemas.WebhookDiscussionUnanswered.DiscussionPayload.Value1Payload.StatePayload,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         user: Components.Schemas.WebhookDiscussionUnanswered.DiscussionPayload.Value1Payload.UserPayload? = nil
                     ) {
                         self.activeLockReason = activeLockReason
@@ -15833,7 +15831,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/old_answer/child_comment_count`.
                 public var childCommentCount: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/old_answer/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/old_answer/discussion_id`.
                 public var discussionId: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/old_answer/html_url`.
@@ -15920,7 +15918,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/old_answer/repository_url`.
                 public var repositoryUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/old_answer/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/old_answer/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unanswered/old_answer/user/avatar_url`.
@@ -16086,7 +16084,7 @@ public enum Components {
                     authorAssociation: Components.Schemas.WebhookDiscussionUnanswered.OldAnswerPayload.AuthorAssociationPayload,
                     body: Swift.String,
                     childCommentCount: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     discussionId: Swift.Int,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
@@ -16094,7 +16092,7 @@ public enum Components {
                     parentId: OpenAPIRuntime.OpenAPIValueContainer? = nil,
                     reactions: Components.Schemas.WebhookDiscussionUnanswered.OldAnswerPayload.ReactionsPayload? = nil,
                     repositoryUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionUnanswered.OldAnswerPayload.UserPayload? = nil
                 ) {
                     self.authorAssociation = authorAssociation
@@ -16359,7 +16357,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/category`.
                 public struct CategoryPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/category/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/category/description`.
                     public var description: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/category/emoji`.
@@ -16392,7 +16390,7 @@ public enum Components {
                     ///   - slug:
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         description: Swift.String,
                         emoji: Swift.String,
                         id: Swift.Int,
@@ -16432,7 +16430,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/id`.
@@ -16532,7 +16530,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlabeled/discussion/user/avatar_url`.
@@ -16711,7 +16709,7 @@ public enum Components {
                     body: Swift.String,
                     category: Components.Schemas.WebhookDiscussionUnlabeled.DiscussionPayload.CategoryPayload,
                     comments: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     locked: Swift.Bool,
@@ -16722,7 +16720,7 @@ public enum Components {
                     state: Components.Schemas.WebhookDiscussionUnlabeled.DiscussionPayload.StatePayload,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionUnlabeled.DiscussionPayload.UserPayload? = nil
                 ) {
                     self.activeLockReason = activeLockReason
@@ -17070,7 +17068,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/category`.
                     public struct CategoryPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/category/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/category/description`.
                         public var description: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/category/emoji`.
@@ -17103,7 +17101,7 @@ public enum Components {
                         ///   - slug:
                         ///   - updatedAt:
                         public init(
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             description: Swift.String,
                             emoji: Swift.String,
                             id: Swift.Int,
@@ -17143,7 +17141,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/comments`.
                     public var comments: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/html_url`.
                     public var htmlUrl: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/id`.
@@ -17243,7 +17241,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/title`.
                     public var title: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/user`.
                     public struct UserPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-discussion-unlocked/discussion/value1/user/avatar_url`.
@@ -17422,7 +17420,7 @@ public enum Components {
                         body: Swift.String,
                         category: Components.Schemas.WebhookDiscussionUnlocked.DiscussionPayload.Value1Payload.CategoryPayload,
                         comments: Swift.Int,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         htmlUrl: Swift.String,
                         id: Swift.Int,
                         locked: Swift.Bool,
@@ -17433,7 +17431,7 @@ public enum Components {
                         state: Components.Schemas.WebhookDiscussionUnlocked.DiscussionPayload.Value1Payload.StatePayload,
                         timelineUrl: Swift.String? = nil,
                         title: Swift.String,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         user: Components.Schemas.WebhookDiscussionUnlocked.DiscussionPayload.Value1Payload.UserPayload? = nil
                     ) {
                         self.activeLockReason = activeLockReason
@@ -18141,7 +18139,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/category`.
                 public struct CategoryPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/category/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/category/description`.
                     public var description: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/category/emoji`.
@@ -18174,7 +18172,7 @@ public enum Components {
                     ///   - slug:
                     ///   - updatedAt:
                     public init(
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         description: Swift.String,
                         emoji: Swift.String,
                         id: Swift.Int,
@@ -18214,7 +18212,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/comments`.
                 public var comments: Swift.Int
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/created_at`.
-                public var createdAt: Foundation.Date
+                public var createdAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/html_url`.
                 public var htmlUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/id`.
@@ -18314,7 +18312,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/title`.
                 public var title: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/user`.
                 public struct UserPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-discussion-unpinned/discussion/user/avatar_url`.
@@ -18493,7 +18491,7 @@ public enum Components {
                     body: Swift.String,
                     category: Components.Schemas.WebhookDiscussionUnpinned.DiscussionPayload.CategoryPayload,
                     comments: Swift.Int,
-                    createdAt: Foundation.Date,
+                    createdAt: Swift.String,
                     htmlUrl: Swift.String,
                     id: Swift.Int,
                     locked: Swift.Bool,
@@ -18504,7 +18502,7 @@ public enum Components {
                     state: Components.Schemas.WebhookDiscussionUnpinned.DiscussionPayload.StatePayload,
                     timelineUrl: Swift.String? = nil,
                     title: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     user: Components.Schemas.WebhookDiscussionUnpinned.DiscussionPayload.UserPayload? = nil
                 ) {
                     self.activeLockReason = activeLockReason

@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -455,9 +453,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -481,8 +479,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -776,11 +774,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -1846,9 +1844,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2506,7 +2504,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-team-added-to-repository/repository/created_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-team-added-to-repository/repository/created_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -2886,7 +2884,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-team-added-to-repository/repository/pushed_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-team-added-to-repository/repository/pushed_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -2949,7 +2947,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-team-added-to-repository/repository/trees_url`.
                 public var treesUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-added-to-repository/repository/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-added-to-repository/repository/url`.
                 public var url: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-added-to-repository/repository/visibility`.
@@ -3141,7 +3139,7 @@ public enum Components {
                     teamsUrl: Swift.String,
                     topics: [Swift.String],
                     treesUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     visibility: Components.Schemas.WebhookTeamAddedToRepository.RepositoryPayload.VisibilityPayload,
                     watchers: Swift.Int,
@@ -3647,7 +3645,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-team-created/repository/created_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-team-created/repository/created_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -4027,7 +4025,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-team-created/repository/pushed_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-team-created/repository/pushed_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -4090,7 +4088,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-team-created/repository/trees_url`.
                 public var treesUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-created/repository/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-created/repository/url`.
                 public var url: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-created/repository/visibility`.
@@ -4282,7 +4280,7 @@ public enum Components {
                     teamsUrl: Swift.String,
                     topics: [Swift.String],
                     treesUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     visibility: Components.Schemas.WebhookTeamCreated.RepositoryPayload.VisibilityPayload,
                     watchers: Swift.Int,
@@ -4788,7 +4786,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-team-deleted/repository/created_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-team-deleted/repository/created_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -5168,7 +5166,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-team-deleted/repository/pushed_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-team-deleted/repository/pushed_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -5231,7 +5229,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-team-deleted/repository/trees_url`.
                 public var treesUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-deleted/repository/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-deleted/repository/url`.
                 public var url: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-deleted/repository/visibility`.
@@ -5423,7 +5421,7 @@ public enum Components {
                     teamsUrl: Swift.String,
                     topics: [Swift.String],
                     treesUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     visibility: Components.Schemas.WebhookTeamDeleted.RepositoryPayload.VisibilityPayload,
                     watchers: Swift.Int,
@@ -6086,7 +6084,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-team-edited/repository/created_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-team-edited/repository/created_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -6466,7 +6464,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-team-edited/repository/pushed_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-team-edited/repository/pushed_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -6529,7 +6527,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-team-edited/repository/trees_url`.
                 public var treesUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-edited/repository/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-edited/repository/url`.
                 public var url: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-edited/repository/visibility`.
@@ -6721,7 +6719,7 @@ public enum Components {
                     teamsUrl: Swift.String,
                     topics: [Swift.String],
                     treesUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     visibility: Components.Schemas.WebhookTeamEdited.RepositoryPayload.VisibilityPayload,
                     watchers: Swift.Int,
@@ -7231,7 +7229,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-team-removed-from-repository/repository/created_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-team-removed-from-repository/repository/created_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -7611,7 +7609,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-team-removed-from-repository/repository/pushed_at/case1`.
                     case case1(Swift.Int)
                     /// - Remark: Generated from `#/components/schemas/webhook-team-removed-from-repository/repository/pushed_at/case2`.
-                    case case2(Foundation.Date)
+                    case case2(Swift.String)
                     public init(from decoder: any Decoder) throws {
                         var errors: [any Error] = []
                         do {
@@ -7674,7 +7672,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-team-removed-from-repository/repository/trees_url`.
                 public var treesUrl: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-removed-from-repository/repository/updated_at`.
-                public var updatedAt: Foundation.Date
+                public var updatedAt: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-removed-from-repository/repository/url`.
                 public var url: Swift.String
                 /// - Remark: Generated from `#/components/schemas/webhook-team-removed-from-repository/repository/visibility`.
@@ -7866,7 +7864,7 @@ public enum Components {
                     teamsUrl: Swift.String,
                     topics: [Swift.String],
                     treesUrl: Swift.String,
-                    updatedAt: Foundation.Date,
+                    updatedAt: Swift.String,
                     url: Swift.String,
                     visibility: Components.Schemas.WebhookTeamRemovedFromRepository.RepositoryPayload.VisibilityPayload,
                     watchers: Swift.Int,

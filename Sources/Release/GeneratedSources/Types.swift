@@ -3,11 +3,9 @@
 #if os(Linux)
 @preconcurrency import struct Foundation.URL
 @preconcurrency import struct Foundation.Data
-@preconcurrency import struct Foundation.Date
 #else
 import struct Foundation.URL
 import struct Foundation.Data
-import struct Foundation.Date
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
@@ -473,9 +471,9 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/enterprise/slug`.
             public var slug: Swift.String
             /// - Remark: Generated from `#/components/schemas/enterprise/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/enterprise/avatar_url`.
             public var avatarUrl: Swift.String
             /// Creates a new `Enterprise`.
@@ -499,8 +497,8 @@ public enum Components {
                 nodeId: Swift.String,
                 name: Swift.String,
                 slug: Swift.String,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 avatarUrl: Swift.String
             ) {
                 self.description = description
@@ -794,11 +792,11 @@ public enum Components {
             /// - Remark: Generated from `#/components/schemas/repository/visibility`.
             public var visibility: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/pushed_at`.
-            public var pushedAt: Foundation.Date?
+            public var pushedAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/created_at`.
-            public var createdAt: Foundation.Date?
+            public var createdAt: Swift.String?
             /// - Remark: Generated from `#/components/schemas/repository/updated_at`.
-            public var updatedAt: Foundation.Date?
+            public var updatedAt: Swift.String?
             /// Whether to allow rebase merges for pull requests.
             ///
             /// - Remark: Generated from `#/components/schemas/repository/allow_rebase_merge`.
@@ -1864,9 +1862,9 @@ public enum Components {
                 archived: Swift.Bool,
                 disabled: Swift.Bool,
                 visibility: Swift.String? = nil,
-                pushedAt: Foundation.Date? = nil,
-                createdAt: Foundation.Date? = nil,
-                updatedAt: Foundation.Date? = nil,
+                pushedAt: Swift.String? = nil,
+                createdAt: Swift.String? = nil,
+                updatedAt: Swift.String? = nil,
                 allowRebaseMerge: Swift.Bool? = nil,
                 templateRepository: Components.Schemas.Repository.TemplateRepositoryPayload? = nil,
                 tempCloneToken: Swift.String? = nil,
@@ -2231,7 +2229,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/AssetsPayload/content_type`.
                     public var contentType: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/AssetsPayload/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/AssetsPayload/download_count`.
                     public var downloadCount: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/AssetsPayload/id`.
@@ -2257,7 +2255,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/AssetsPayload/state`.
                     public var state: Components.Schemas.WebhookReleaseCreated.ReleasePayload.AssetsPayloadPayload.StatePayload
                     /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/AssetsPayload/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/AssetsPayload/uploader`.
                     public struct UploaderPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/AssetsPayload/uploader/avatar_url`.
@@ -2424,7 +2422,7 @@ public enum Components {
                     public init(
                         browserDownloadUrl: Swift.String,
                         contentType: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         downloadCount: Swift.Int,
                         id: Swift.Int,
                         label: Swift.String? = nil,
@@ -2432,7 +2430,7 @@ public enum Components {
                         nodeId: Swift.String,
                         size: Swift.Int,
                         state: Components.Schemas.WebhookReleaseCreated.ReleasePayload.AssetsPayloadPayload.StatePayload,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         uploader: Components.Schemas.WebhookReleaseCreated.ReleasePayload.AssetsPayloadPayload.UploaderPayload? = nil,
                         url: Swift.String
                     ) {
@@ -2620,7 +2618,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/created_at`.
-                public var createdAt: Foundation.Date?
+                public var createdAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/discussion_url`.
                 public var discussionUrl: Swift.String?
                 /// Whether the release is a draft or published
@@ -2640,7 +2638,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/prerelease`.
                 public var prerelease: Swift.Bool
                 /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/published_at`.
-                public var publishedAt: Foundation.Date?
+                public var publishedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/reactions`.
                 public struct ReactionsPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-created/release/reactions/+1`.
@@ -2758,7 +2756,7 @@ public enum Components {
                     assetsUrl: Swift.String,
                     author: Components.Schemas.WebhookReleaseCreated.ReleasePayload.AuthorPayload? = nil,
                     body: Swift.String? = nil,
-                    createdAt: Foundation.Date? = nil,
+                    createdAt: Swift.String? = nil,
                     discussionUrl: Swift.String? = nil,
                     draft: Swift.Bool,
                     htmlUrl: Swift.String,
@@ -2766,7 +2764,7 @@ public enum Components {
                     name: Swift.String? = nil,
                     nodeId: Swift.String,
                     prerelease: Swift.Bool,
-                    publishedAt: Foundation.Date? = nil,
+                    publishedAt: Swift.String? = nil,
                     reactions: Components.Schemas.WebhookReleaseCreated.ReleasePayload.ReactionsPayload? = nil,
                     tagName: Swift.String,
                     tarballUrl: Swift.String? = nil,
@@ -2891,7 +2889,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/AssetsPayload/content_type`.
                     public var contentType: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/AssetsPayload/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/AssetsPayload/download_count`.
                     public var downloadCount: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/AssetsPayload/id`.
@@ -2917,7 +2915,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/AssetsPayload/state`.
                     public var state: Components.Schemas.WebhookReleaseDeleted.ReleasePayload.AssetsPayloadPayload.StatePayload
                     /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/AssetsPayload/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/AssetsPayload/uploader`.
                     public struct UploaderPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/AssetsPayload/uploader/avatar_url`.
@@ -3084,7 +3082,7 @@ public enum Components {
                     public init(
                         browserDownloadUrl: Swift.String,
                         contentType: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         downloadCount: Swift.Int,
                         id: Swift.Int,
                         label: Swift.String? = nil,
@@ -3092,7 +3090,7 @@ public enum Components {
                         nodeId: Swift.String,
                         size: Swift.Int,
                         state: Components.Schemas.WebhookReleaseDeleted.ReleasePayload.AssetsPayloadPayload.StatePayload,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         uploader: Components.Schemas.WebhookReleaseDeleted.ReleasePayload.AssetsPayloadPayload.UploaderPayload? = nil,
                         url: Swift.String
                     ) {
@@ -3280,7 +3278,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/created_at`.
-                public var createdAt: Foundation.Date?
+                public var createdAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/discussion_url`.
                 public var discussionUrl: Swift.String?
                 /// Whether the release is a draft or published
@@ -3300,7 +3298,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/prerelease`.
                 public var prerelease: Swift.Bool
                 /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/published_at`.
-                public var publishedAt: Foundation.Date?
+                public var publishedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/reactions`.
                 public struct ReactionsPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-deleted/release/reactions/+1`.
@@ -3418,7 +3416,7 @@ public enum Components {
                     assetsUrl: Swift.String,
                     author: Components.Schemas.WebhookReleaseDeleted.ReleasePayload.AuthorPayload? = nil,
                     body: Swift.String? = nil,
-                    createdAt: Foundation.Date? = nil,
+                    createdAt: Swift.String? = nil,
                     discussionUrl: Swift.String? = nil,
                     draft: Swift.Bool,
                     htmlUrl: Swift.String,
@@ -3426,7 +3424,7 @@ public enum Components {
                     name: Swift.String? = nil,
                     nodeId: Swift.String,
                     prerelease: Swift.Bool,
-                    publishedAt: Foundation.Date? = nil,
+                    publishedAt: Swift.String? = nil,
                     reactions: Components.Schemas.WebhookReleaseDeleted.ReleasePayload.ReactionsPayload? = nil,
                     tagName: Swift.String,
                     tarballUrl: Swift.String? = nil,
@@ -3610,7 +3608,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/AssetsPayload/content_type`.
                     public var contentType: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/AssetsPayload/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/AssetsPayload/download_count`.
                     public var downloadCount: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/AssetsPayload/id`.
@@ -3636,7 +3634,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/AssetsPayload/state`.
                     public var state: Components.Schemas.WebhookReleaseEdited.ReleasePayload.AssetsPayloadPayload.StatePayload
                     /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/AssetsPayload/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/AssetsPayload/uploader`.
                     public struct UploaderPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/AssetsPayload/uploader/avatar_url`.
@@ -3803,7 +3801,7 @@ public enum Components {
                     public init(
                         browserDownloadUrl: Swift.String,
                         contentType: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         downloadCount: Swift.Int,
                         id: Swift.Int,
                         label: Swift.String? = nil,
@@ -3811,7 +3809,7 @@ public enum Components {
                         nodeId: Swift.String,
                         size: Swift.Int,
                         state: Components.Schemas.WebhookReleaseEdited.ReleasePayload.AssetsPayloadPayload.StatePayload,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         uploader: Components.Schemas.WebhookReleaseEdited.ReleasePayload.AssetsPayloadPayload.UploaderPayload? = nil,
                         url: Swift.String
                     ) {
@@ -3999,7 +3997,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/created_at`.
-                public var createdAt: Foundation.Date?
+                public var createdAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/discussion_url`.
                 public var discussionUrl: Swift.String?
                 /// Whether the release is a draft or published
@@ -4019,7 +4017,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/prerelease`.
                 public var prerelease: Swift.Bool
                 /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/published_at`.
-                public var publishedAt: Foundation.Date?
+                public var publishedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/reactions`.
                 public struct ReactionsPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-edited/release/reactions/+1`.
@@ -4137,7 +4135,7 @@ public enum Components {
                     assetsUrl: Swift.String,
                     author: Components.Schemas.WebhookReleaseEdited.ReleasePayload.AuthorPayload? = nil,
                     body: Swift.String? = nil,
-                    createdAt: Foundation.Date? = nil,
+                    createdAt: Swift.String? = nil,
                     discussionUrl: Swift.String? = nil,
                     draft: Swift.Bool,
                     htmlUrl: Swift.String,
@@ -4145,7 +4143,7 @@ public enum Components {
                     name: Swift.String? = nil,
                     nodeId: Swift.String,
                     prerelease: Swift.Bool,
-                    publishedAt: Foundation.Date? = nil,
+                    publishedAt: Swift.String? = nil,
                     reactions: Components.Schemas.WebhookReleaseEdited.ReleasePayload.ReactionsPayload? = nil,
                     tagName: Swift.String,
                     tarballUrl: Swift.String? = nil,
@@ -4276,7 +4274,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/AssetsPayload/content_type`.
                         public var contentType: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/AssetsPayload/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/AssetsPayload/download_count`.
                         public var downloadCount: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/AssetsPayload/id`.
@@ -4302,7 +4300,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/AssetsPayload/state`.
                         public var state: Components.Schemas.WebhookReleasePrereleased.ReleasePayload.Value1Payload.AssetsPayloadPayload.StatePayload
                         /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/AssetsPayload/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/AssetsPayload/uploader`.
                         public struct UploaderPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/AssetsPayload/uploader/avatar_url`.
@@ -4469,7 +4467,7 @@ public enum Components {
                         public init(
                             browserDownloadUrl: Swift.String,
                             contentType: Swift.String,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             downloadCount: Swift.Int,
                             id: Swift.Int,
                             label: Swift.String? = nil,
@@ -4477,7 +4475,7 @@ public enum Components {
                             nodeId: Swift.String,
                             size: Swift.Int,
                             state: Components.Schemas.WebhookReleasePrereleased.ReleasePayload.Value1Payload.AssetsPayloadPayload.StatePayload,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             uploader: Components.Schemas.WebhookReleasePrereleased.ReleasePayload.Value1Payload.AssetsPayloadPayload.UploaderPayload? = nil,
                             url: Swift.String
                         ) {
@@ -4665,7 +4663,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/discussion_url`.
                     public var discussionUrl: Swift.String?
                     /// Whether the release is a draft or published
@@ -4685,7 +4683,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/prerelease`.
                     public var prerelease: Swift.Bool
                     /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/published_at`.
-                    public var publishedAt: Foundation.Date?
+                    public var publishedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/reactions`.
                     public struct ReactionsPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-prereleased/release/value1/reactions/+1`.
@@ -4803,7 +4801,7 @@ public enum Components {
                         assetsUrl: Swift.String,
                         author: Components.Schemas.WebhookReleasePrereleased.ReleasePayload.Value1Payload.AuthorPayload? = nil,
                         body: Swift.String? = nil,
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         discussionUrl: Swift.String? = nil,
                         draft: Swift.Bool,
                         htmlUrl: Swift.String,
@@ -4811,7 +4809,7 @@ public enum Components {
                         name: Swift.String? = nil,
                         nodeId: Swift.String,
                         prerelease: Swift.Bool,
-                        publishedAt: Foundation.Date? = nil,
+                        publishedAt: Swift.String? = nil,
                         reactions: Components.Schemas.WebhookReleasePrereleased.ReleasePayload.Value1Payload.ReactionsPayload? = nil,
                         tagName: Swift.String,
                         tarballUrl: Swift.String? = nil,
@@ -5203,7 +5201,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/AssetsPayload/content_type`.
                         public var contentType: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/AssetsPayload/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/AssetsPayload/download_count`.
                         public var downloadCount: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/AssetsPayload/id`.
@@ -5229,7 +5227,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/AssetsPayload/state`.
                         public var state: Components.Schemas.WebhookReleasePublished.ReleasePayload.Value1Payload.AssetsPayloadPayload.StatePayload
                         /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/AssetsPayload/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/AssetsPayload/uploader`.
                         public struct UploaderPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/AssetsPayload/uploader/avatar_url`.
@@ -5396,7 +5394,7 @@ public enum Components {
                         public init(
                             browserDownloadUrl: Swift.String,
                             contentType: Swift.String,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             downloadCount: Swift.Int,
                             id: Swift.Int,
                             label: Swift.String? = nil,
@@ -5404,7 +5402,7 @@ public enum Components {
                             nodeId: Swift.String,
                             size: Swift.Int,
                             state: Components.Schemas.WebhookReleasePublished.ReleasePayload.Value1Payload.AssetsPayloadPayload.StatePayload,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             uploader: Components.Schemas.WebhookReleasePublished.ReleasePayload.Value1Payload.AssetsPayloadPayload.UploaderPayload? = nil,
                             url: Swift.String
                         ) {
@@ -5592,7 +5590,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/discussion_url`.
                     public var discussionUrl: Swift.String?
                     /// Whether the release is a draft or published
@@ -5612,7 +5610,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/prerelease`.
                     public var prerelease: Swift.Bool
                     /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/published_at`.
-                    public var publishedAt: Foundation.Date?
+                    public var publishedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/reactions`.
                     public struct ReactionsPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value1/reactions/+1`.
@@ -5730,7 +5728,7 @@ public enum Components {
                         assetsUrl: Swift.String,
                         author: Components.Schemas.WebhookReleasePublished.ReleasePayload.Value1Payload.AuthorPayload? = nil,
                         body: Swift.String? = nil,
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         discussionUrl: Swift.String? = nil,
                         draft: Swift.Bool,
                         htmlUrl: Swift.String,
@@ -5738,7 +5736,7 @@ public enum Components {
                         name: Swift.String? = nil,
                         nodeId: Swift.String,
                         prerelease: Swift.Bool,
-                        publishedAt: Foundation.Date? = nil,
+                        publishedAt: Swift.String? = nil,
                         reactions: Components.Schemas.WebhookReleasePublished.ReleasePayload.Value1Payload.ReactionsPayload? = nil,
                         tagName: Swift.String,
                         tarballUrl: Swift.String? = nil,
@@ -5939,7 +5937,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value2/prerelease`.
                     public var prerelease: Swift.Bool?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value2/published_at`.
-                    public var publishedAt: Foundation.Date?
+                    public var publishedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value2/tag_name`.
                     public var tagName: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-published/release/value2/tarball_url`.
@@ -5985,7 +5983,7 @@ public enum Components {
                         name: Swift.String? = nil,
                         nodeId: Swift.String? = nil,
                         prerelease: Swift.Bool? = nil,
-                        publishedAt: Foundation.Date? = nil,
+                        publishedAt: Swift.String? = nil,
                         tagName: Swift.String? = nil,
                         tarballUrl: Swift.String? = nil,
                         targetCommitish: Swift.String? = nil,
@@ -6126,7 +6124,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/AssetsPayload/content_type`.
                     public var contentType: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/AssetsPayload/created_at`.
-                    public var createdAt: Foundation.Date
+                    public var createdAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/AssetsPayload/download_count`.
                     public var downloadCount: Swift.Int
                     /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/AssetsPayload/id`.
@@ -6152,7 +6150,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/AssetsPayload/state`.
                     public var state: Components.Schemas.WebhookReleaseReleased.ReleasePayload.AssetsPayloadPayload.StatePayload
                     /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/AssetsPayload/updated_at`.
-                    public var updatedAt: Foundation.Date
+                    public var updatedAt: Swift.String
                     /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/AssetsPayload/uploader`.
                     public struct UploaderPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/AssetsPayload/uploader/avatar_url`.
@@ -6319,7 +6317,7 @@ public enum Components {
                     public init(
                         browserDownloadUrl: Swift.String,
                         contentType: Swift.String,
-                        createdAt: Foundation.Date,
+                        createdAt: Swift.String,
                         downloadCount: Swift.Int,
                         id: Swift.Int,
                         label: Swift.String? = nil,
@@ -6327,7 +6325,7 @@ public enum Components {
                         nodeId: Swift.String,
                         size: Swift.Int,
                         state: Components.Schemas.WebhookReleaseReleased.ReleasePayload.AssetsPayloadPayload.StatePayload,
-                        updatedAt: Foundation.Date,
+                        updatedAt: Swift.String,
                         uploader: Components.Schemas.WebhookReleaseReleased.ReleasePayload.AssetsPayloadPayload.UploaderPayload? = nil,
                         url: Swift.String
                     ) {
@@ -6515,7 +6513,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/body`.
                 public var body: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/created_at`.
-                public var createdAt: Foundation.Date?
+                public var createdAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/discussion_url`.
                 public var discussionUrl: Swift.String?
                 /// Whether the release is a draft or published
@@ -6535,7 +6533,7 @@ public enum Components {
                 /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/prerelease`.
                 public var prerelease: Swift.Bool
                 /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/published_at`.
-                public var publishedAt: Foundation.Date?
+                public var publishedAt: Swift.String?
                 /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/reactions`.
                 public struct ReactionsPayload: Codable, Hashable, Sendable {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-released/release/reactions/+1`.
@@ -6653,7 +6651,7 @@ public enum Components {
                     assetsUrl: Swift.String,
                     author: Components.Schemas.WebhookReleaseReleased.ReleasePayload.AuthorPayload? = nil,
                     body: Swift.String? = nil,
-                    createdAt: Foundation.Date? = nil,
+                    createdAt: Swift.String? = nil,
                     discussionUrl: Swift.String? = nil,
                     draft: Swift.Bool,
                     htmlUrl: Swift.String,
@@ -6661,7 +6659,7 @@ public enum Components {
                     name: Swift.String? = nil,
                     nodeId: Swift.String,
                     prerelease: Swift.Bool,
-                    publishedAt: Foundation.Date? = nil,
+                    publishedAt: Swift.String? = nil,
                     reactions: Components.Schemas.WebhookReleaseReleased.ReleasePayload.ReactionsPayload? = nil,
                     tagName: Swift.String,
                     tarballUrl: Swift.String? = nil,
@@ -6788,7 +6786,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/AssetsPayload/content_type`.
                         public var contentType: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/AssetsPayload/created_at`.
-                        public var createdAt: Foundation.Date
+                        public var createdAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/AssetsPayload/download_count`.
                         public var downloadCount: Swift.Int
                         /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/AssetsPayload/id`.
@@ -6814,7 +6812,7 @@ public enum Components {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/AssetsPayload/state`.
                         public var state: Components.Schemas.WebhookReleaseUnpublished.ReleasePayload.Value1Payload.AssetsPayloadPayload.StatePayload
                         /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/AssetsPayload/updated_at`.
-                        public var updatedAt: Foundation.Date
+                        public var updatedAt: Swift.String
                         /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/AssetsPayload/uploader`.
                         public struct UploaderPayload: Codable, Hashable, Sendable {
                             /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/AssetsPayload/uploader/avatar_url`.
@@ -6981,7 +6979,7 @@ public enum Components {
                         public init(
                             browserDownloadUrl: Swift.String,
                             contentType: Swift.String,
-                            createdAt: Foundation.Date,
+                            createdAt: Swift.String,
                             downloadCount: Swift.Int,
                             id: Swift.Int,
                             label: Swift.String? = nil,
@@ -6989,7 +6987,7 @@ public enum Components {
                             nodeId: Swift.String,
                             size: Swift.Int,
                             state: Components.Schemas.WebhookReleaseUnpublished.ReleasePayload.Value1Payload.AssetsPayloadPayload.StatePayload,
-                            updatedAt: Foundation.Date,
+                            updatedAt: Swift.String,
                             uploader: Components.Schemas.WebhookReleaseUnpublished.ReleasePayload.Value1Payload.AssetsPayloadPayload.UploaderPayload? = nil,
                             url: Swift.String
                         ) {
@@ -7177,7 +7175,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/body`.
                     public var body: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/created_at`.
-                    public var createdAt: Foundation.Date?
+                    public var createdAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/discussion_url`.
                     public var discussionUrl: Swift.String?
                     /// Whether the release is a draft or published
@@ -7197,7 +7195,7 @@ public enum Components {
                     /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/prerelease`.
                     public var prerelease: Swift.Bool
                     /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/published_at`.
-                    public var publishedAt: Foundation.Date?
+                    public var publishedAt: Swift.String?
                     /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/reactions`.
                     public struct ReactionsPayload: Codable, Hashable, Sendable {
                         /// - Remark: Generated from `#/components/schemas/webhook-release-unpublished/release/value1/reactions/+1`.
@@ -7315,7 +7313,7 @@ public enum Components {
                         assetsUrl: Swift.String,
                         author: Components.Schemas.WebhookReleaseUnpublished.ReleasePayload.Value1Payload.AuthorPayload? = nil,
                         body: Swift.String? = nil,
-                        createdAt: Foundation.Date? = nil,
+                        createdAt: Swift.String? = nil,
                         discussionUrl: Swift.String? = nil,
                         draft: Swift.Bool,
                         htmlUrl: Swift.String,
@@ -7323,7 +7321,7 @@ public enum Components {
                         name: Swift.String? = nil,
                         nodeId: Swift.String,
                         prerelease: Swift.Bool,
-                        publishedAt: Foundation.Date? = nil,
+                        publishedAt: Swift.String? = nil,
                         reactions: Components.Schemas.WebhookReleaseUnpublished.ReleasePayload.Value1Payload.ReactionsPayload? = nil,
                         tagName: Swift.String,
                         tarballUrl: Swift.String? = nil,
